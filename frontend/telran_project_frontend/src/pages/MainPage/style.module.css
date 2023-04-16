@@ -1,0 +1,60 @@
+.banner{
+    height: 37.5rem;
+    padding: 1.875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    background:#A1E2EB url(../../../public/images/banner_background.png) no-repeat right bottom;
+}
+.banner button{
+    width: 9.7rem;
+    height: 5.1rem;
+    font-size: 1.56rem;
+    border: none;
+    border-radius: .6rem;
+    margin-top: 5rem;
+    margin-left: 0.625rem;
+}
+.banner h3{
+    font-size: 5rem;
+    padding: 0.625rem;
+}
+.banner p {
+    font-size: 3.9rem;
+    margin-top: 1rem;
+    padding: 0.625rem;
+}
+.categories_top{
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+}
+.categories_container{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: 250px;
+    gap: 10px;
+}
+.get_discount{
+    color: white;
+    height: 29.75rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(90deg, #076B07, #2B902B);
+}
+.get_discount::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../../../public/images/discount_background.png);
+    z-index: -1;
+}
+.discount_form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
