@@ -5,6 +5,7 @@ import MainPage from '../../pages/MainPage';
 import BasketPage from '../../pages/BasketPage';
 import NotFoundPage from '../../pages/NotFoundPage';
 import ProductPage from '../../pages/ProductPage';
+import Footer from '../Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/product/:category' element={<ProductPage/>}/>
         <Route path='/product/all' element={<ProductPage/>}/>
       </Routes>
+      <Footer/>
     </div>
   );
 }
