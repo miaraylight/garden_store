@@ -3,10 +3,9 @@ import s from './style.module.css'
 import FooterMap from '../FooterMap'
 
 export default function Footer() {
-
   return (
     <div className={s.container}>
-        <div className={s.contact_info}>
+        <address className={s.contact_info}>
             <div className={s.number_wrapper}>
                 <p className={s.head}>Contact</p>
                 <p className={s.number}>+49 999 999 99 99</p>
@@ -29,7 +28,7 @@ export default function Footer() {
                     <p>24 hours a day</p>
                 </div>
             </div>
-        </div>
+        </address>
         <div id={s.map}>
             <FooterMap/>
         </div>

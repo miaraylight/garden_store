@@ -1,6 +1,7 @@
-const PRODUCTS_LOAD = "PRODUCTS_LOAD"
+import { createSlice } from '@reduxjs/toolkit'
 
-const defaultState = [
+
+const initialState = [
     {
       "id": 1,
       "title": "Savannah Summer Annual Collection",
@@ -388,11 +389,12 @@ const defaultState = [
     }
   ]
 
-export const productsLoadAction = (payload) => ({type: PRODUCTS_LOAD, payload})
+export const productSlice = createSlice({
+    name: 'product',
+    initialState,
+    reducers: {
 
-export const productReducer = (state = defaultState, action) => {
-    if (action.type === PRODUCTS_LOAD) {
-        return [...state]
     }
-    return state
-}
+})
+
+export default productSlice.reducer
