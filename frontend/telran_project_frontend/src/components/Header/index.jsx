@@ -12,7 +12,7 @@ export default function Header() {
       <div className={s.links_wrapper}>
         <NavLink className={s.link} to='/'>Main Page</NavLink>
         <NavLink className={s.link} to='/product/all'>All products</NavLink>
-        <NavLink className={s.link} to='/product/:sale'>All sales</NavLink>
+        <NavLink className={s.link} to='/product/sale'>All sales</NavLink>
         <NavLink className={s.link_basket} to='/basket'>
           <img src={process.env.PUBLIC_URL + '/images/basket_icon.svg'} alt="" />
         </NavLink>

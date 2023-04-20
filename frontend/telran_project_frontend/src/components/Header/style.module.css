@@ -1,6 +1,5 @@
 .container{
     height: 110px;
-    border: 1px solid black;
     padding: 19px 28px;
     display: grid;
     grid-template-columns: repeat(2, 50%);
