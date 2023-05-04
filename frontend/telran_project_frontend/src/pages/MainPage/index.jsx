@@ -8,8 +8,8 @@ import Banner from '../../components/Banner'
 import GetDiscountForm from '../../components/GetDiscountForm'
 
 export default function MainPage() {
-  const categories = useSelector(state => state.category)
-  const productsOnSale = useSelector(state => state.product.filter(({discont_price})=> discont_price !== null))
+  const categories = useSelector(state => state.category.list)
+  const productsOnSale = useSelector(state => state.product.list.filter(({discont_price})=> discont_price !== null))
   
   return (
     <div>

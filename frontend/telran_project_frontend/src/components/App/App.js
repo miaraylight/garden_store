@@ -8,8 +8,19 @@ import ProductPage from '../../pages/ProductPage';
 import Footer from '../Footer';
 import CategoriesPage from '../../pages/CategoriesPage';
 import ProductDescriptionPage from '../../pages/ProductDescriptionPage';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchProducts } from '../../store/slice/productSlice';
+import { fetchCategories } from '../../store/slice/categorySlice';
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(()=> {
+    dispatch(fetchProducts())
+    dispatch(fetchCategories())
+  }, [])
+  
   return (
     <div className="App">
       <Header/>

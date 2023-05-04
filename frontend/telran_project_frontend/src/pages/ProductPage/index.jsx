@@ -6,15 +6,14 @@ import s from './style.module.css'
 
 export default function ProductPage() {
   const { category, sale } = useParams()
-  console.log(category);
 
   const products = useSelector(state => {
     if (sale !== undefined) {
-      return state.product.filter(({discont_price}) => discont_price !== null)  
+      return state.product.list.filter(({discont_price}) => discont_price !== null)  
     }else if (category !== undefined) {
-      return state.product.filter(({categoryId})=> +categoryId === +category)
+      return state.product.list.filter(({categoryId})=> +categoryId === +category)
     }
-    return state.product
+    return state.product.list
   }
   )
 
