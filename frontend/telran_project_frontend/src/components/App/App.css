@@ -1,0 +1,20 @@
+
+:root {
+    --khaki: #586f69;
+    --lightKhaki: #7a9d91;
+    --white: #e0eae8;
+    --lightBack: #f1f5f4;
+    --darkKhaki: #424242;
+    --black: #011c14;
+    --lightGrey: #a9a9a9;
+    --grey: rgba(103,104,103,0.95);
+    --darkGrey: #676867F2;
+    --width: 1340px
+
+
+
+}
+.App {
+    
+    margin: 0 auto;
+}
