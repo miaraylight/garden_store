@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import ProductItem from '../../components/ProductItem';
 import s from './style.module.css'
+import FilterBar from '../../components/FilterBar';
 
 export default function ProductPage() {
   const { category, sale } = useParams()
@@ -26,7 +27,8 @@ export default function ProductPage() {
   return (
     <div className={s.container}>
       <h1>{header}</h1>
-      <div className={s.product_wrapper}>
+      <FilterBar/>
+      <div className={s.products_wrapper}>
         {
           products.map(item => <ProductItem key={item.id} {...item}/>)
         }

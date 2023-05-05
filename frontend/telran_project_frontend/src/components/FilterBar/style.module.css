@@ -1,0 +1,24 @@
+.container {
+    border: 1px solid red;
+}
+.filter{
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.horizontal_slider {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+    border: 1px solid grey;
+}
+.example_track{
+    position: absolute;
+    left: 0px;
+    right: 337.5px;
+}
+.horizontal-slider .example-track {
+    top: 20px;
+    height: 10px;
+}
