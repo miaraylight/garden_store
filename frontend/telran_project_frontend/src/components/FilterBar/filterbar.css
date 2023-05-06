@@ -1,0 +1,119 @@
+.container {
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--grey);
+}
+.toolbar {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    gap: 1%;
+}
+.filter-block {
+    display: flex;
+    align-items: center;
+}
+.filter-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+}
+.filter-btn img {
+    width: 20px;
+    height: 20px;
+}
+.filter-block span {
+    margin: 0 5px;
+}
+/***********************************/
+.discount-block{
+    margin: 0 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+/***********************************/
+.horizontal_slider {
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    margin-left: 10px;
+}
+.example-track{
+    position: absolute;
+    left: 0px;
+    right: 200px;
+}
+.horizontal_slider .example-track {
+    top: 18px;
+    height: 3px;
+}
+.example-track.example-track-0 {
+    background: var(--lightGrey);
+}
+.example-track.example-track-1 {
+    background: var(--khaki);
+}
+.example-track.example-track-2 {
+    background: var(--lightGrey);
+}
+.horizontal_slider .example_thumb {
+    top: 10.5px;
+    width: 16px;
+    height: 16px;
+    line-height: 49px;
+    font-size: 0.8em;
+    text-align: center;
+    background-color: var(--khaki);
+    border-radius: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    outline: none;
+}
+/********************************************/
+.sort_block {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    gap: 5px;
+    margin-left: auto;
+}
+.select{
+    border: none;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--grey);
+    padding: 10px;
+    outline: none;
+}
+.select:focus{
+    border: 1px dashed #666666;
+}
+.grid-btn, .list-btn {
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    transition: transform 1s;
+}
+.grid-btn:hover, 
+.list-btn:hover{
+    transform: scale(1.1);
+}
+.grid-btn img{
+    width: 20px;
+    height: 20px;
+}
+.list-btn img{
+    width: 25px;
+    height: 25px;
+}
