@@ -2,9 +2,9 @@ import React from 'react'
 import ReactSlider from 'react-slider'
 import './filterbar.css'
 import { useDispatch } from 'react-redux'
-import { sortByPrice } from '../../store/slice/productSlice'
+import { filterByPriceRange, sortByPrice } from '../../store/slice/productSlice'
 
-export default function FilterBar() {
+export default function FilterBar({minValue, maxValue}) {
   const dispatch = useDispatch()
   return (
     <div className="container">
@@ -19,12 +19,15 @@ export default function FilterBar() {
                 className="horizontal_slider"
                 thumbClassName="example_thumb"
                 trackClassName="example-track"
-                defaultValue={[0, 100]}
+                defaultValue={[minValue, maxValue]}
                 ariaLabel={['Lower thumb', 'Upper thumb']}
                 ariaValuetext={state => `Thumb value ${state.valueNow}`}
                 renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
                 pearling
                 minDistance={10}
+                max={maxValue}
+                min={minValue}
+                onChange={(value, index) => dispatch(filterByPriceRange(value))}
             /> 
             <div className='discount-block'>
               <input type="checkbox" name="discounted"/>

@@ -9,7 +9,7 @@ export const fetchProducts = createAsyncThunk(
         throw new Error('Server error')
       }
       const data = await resp.json()
-      const newData = data.map(item => ({...item, final_price: item.discont_price ?? item.price}))
+      const newData = data.map(item => ({...item, final_price: item.discont_price ?? item.price, show: true}))
       return newData
     }catch(error){
       return rejectWithValue(error.message)
@@ -32,6 +32,9 @@ export const productSlice = createSlice({
         }else if (payload === "highToLow") {
           state.list.sort((a, b) => b.final_price - a.final_price)
         }
+      },
+      filterByPriceRange(state, {payload}){
+        state.list.forEach(item=> item.show = item.final_price >= payload[0] && item.final_price <= payload[1])
       }
 
     },
@@ -51,5 +54,5 @@ export const productSlice = createSlice({
     }
 })
 
-export const { sortByPrice } = productSlice.actions
+export const { sortByPrice, filterByPriceRange } = productSlice.actions
 export default productSlice.reducer

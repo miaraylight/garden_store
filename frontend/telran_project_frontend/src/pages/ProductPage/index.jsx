@@ -23,15 +23,19 @@ export default function ProductPage() {
   }
   )
   
-  console.log(products);
+  const prices = products.map(({final_price}) => final_price)
+  const min = Math.min(...prices)
+  const max = Math.max(...prices)
 
   return (
     <div className={s.container}>
       <h1>{header}</h1>
-      <FilterBar/>
+      <FilterBar minValue={min} maxValue={max}/>
       <div className={s.products_wrapper}>
         {
-          products.map(item => <ProductItem key={item.id} {...item}/>)
+          products
+            .filter(({show}) => show)
+            .map(item => <ProductItem key={item.id} {...item}/>)
         }
       </div>
       
