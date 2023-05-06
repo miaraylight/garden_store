@@ -1,9 +1,11 @@
 import React from 'react'
-// import s from './style.module.css'
 import ReactSlider from 'react-slider'
 import './filterbar.css'
+import { useDispatch } from 'react-redux'
+import { sortByPrice } from '../../store/slice/productSlice'
 
 export default function FilterBar() {
+  const dispatch = useDispatch()
   return (
     <div className="container">
           <div className="toolbar">
@@ -29,7 +31,10 @@ export default function FilterBar() {
               <label htmlFor="discounted"> Discounted</label>
             </div> 
             <div className="sort_block">
-              <select name="sort_options" className='select'>
+              <select 
+              name="sort_options" 
+              className='select'
+              onChange={(e)=> dispatch(sortByPrice(e.target.value))}>
                 <option value="default">Default sorting</option>
                 <option value="lowToHigh">Sort by price: low to high</option>
                 <option value="highToLow">Sort by price: high to low</option>

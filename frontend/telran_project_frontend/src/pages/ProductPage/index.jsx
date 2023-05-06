@@ -22,7 +22,8 @@ export default function ProductPage() {
     return state.product.list
   }
   )
-
+  
+  console.log(products);
 
   return (
     <div className={s.container}>
