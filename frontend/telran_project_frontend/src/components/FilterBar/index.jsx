@@ -4,8 +4,12 @@ import './filterbar.css'
 import { useDispatch } from 'react-redux'
 import { filterByPriceRange, sortByPrice } from '../../store/slice/productSlice'
 
-export default function FilterBar({minValue, maxValue}) {
+export default function FilterBar({minValue, maxValue, checkboxValue}) {
   const dispatch = useDispatch()
+  maxValue = isNaN(maxValue) ? 0 : maxValue
+  console.log(maxValue);
+  minValue = isNaN(minValue) ? 0 : minValue
+  console.log(minValue);
   return (
     <div className="container">
           <div className="toolbar">
@@ -30,7 +34,7 @@ export default function FilterBar({minValue, maxValue}) {
                 onChange={(value, index) => dispatch(filterByPriceRange(value))}
             /> 
             <div className='discount-block'>
-              <input type="checkbox" name="discounted"/>
+              <input type="checkbox" name="discounted" onChange={(e)=>checkboxValue(e.target.checked)}/>
               <label htmlFor="discounted"> Discounted</label>
             </div> 
             <div className="sort_block">

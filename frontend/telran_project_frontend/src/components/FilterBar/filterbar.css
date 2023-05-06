@@ -92,11 +92,13 @@
     color: var(--grey);
     padding: 10px;
     outline: none;
+    cursor: pointer;
 }
 .select:focus{
     border: 1px dashed #666666;
 }
-.grid-btn, .list-btn {
+.grid-btn, 
+.list-btn {
     background: transparent;
     display: flex;
     align-items: center;
@@ -105,6 +107,7 @@
     height: 30px;
     border: none;
     transition: transform 1s;
+    cursor: pointer;
 }
 .grid-btn:hover, 
 .list-btn:hover{
