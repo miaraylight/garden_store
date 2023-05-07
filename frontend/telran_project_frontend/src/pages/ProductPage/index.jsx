@@ -33,7 +33,7 @@ export default function ProductPage() {
   const prices = products.map(({final_price}) => final_price)
   const min = Math.min(...prices)
   const max = Math.max(...prices)
-  
+
   if (discounted) {
     products = products.filter(({discont_price}) => discont_price !== null)
   }
@@ -47,7 +47,12 @@ export default function ProductPage() {
           </div>
         : <div className={s.container}>
         <h1>{header}</h1>
-        <FilterBar minValue={min} maxValue={max} checkboxValue={setDiscounted}/>
+        <FilterBar 
+          minValue={min} 
+          maxValue={max}
+          checkboxVisibility={header} 
+          checkboxValue={setDiscounted}
+        />
         <div className={s.products_wrapper}>
           {
             products
