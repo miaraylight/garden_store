@@ -1,14 +1,20 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import ProductItem from '../../components/ProductItem';
 import s from './style.module.css'
 import FilterBar from '../../components/FilterBar';
+import { resetFilters } from '../../store/slice/productSlice';
 
 export default function ProductPage() {
   const { category, sale } = useParams()
   const [discounted, setDiscounted] = useState()
+  const dispatch = useDispatch()
 
+  useEffect(() => {
+    dispatch(resetFilters())
+  }, [])
+  
   let header;
 
   let products = useSelector(state => {
@@ -24,6 +30,7 @@ export default function ProductPage() {
   }
   )
   
+  console.log(products);
   const prices = products.map(({final_price}) => final_price)
   const min = Math.min(...prices)
   const max = Math.max(...prices)

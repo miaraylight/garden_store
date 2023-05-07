@@ -31,10 +31,16 @@ export const productSlice = createSlice({
           state.list.sort((a, b) => a.final_price - b.final_price)
         }else if (payload === "highToLow") {
           state.list.sort((a, b) => b.final_price - a.final_price)
+        }else if (payload === "default") {
+          state.list.sort((a, b) => a.id - b.id)
         }
       },
       filterByPriceRange(state, {payload}){
-        state.list.forEach(item=> item.show = item.final_price >= payload[0] && item.final_price <= payload[1])
+        state.list.forEach(item => item.show = item.final_price >= payload[0] && item.final_price <= payload[1])
+      },
+      resetFilters(state){
+        console.log("hi");
+        state.list = state.list.map(item => ({...item, show: true}))
       }
 
     },
@@ -54,5 +60,5 @@ export const productSlice = createSlice({
     }
 })
 
-export const { sortByPrice, filterByPriceRange } = productSlice.actions
+export const { sortByPrice, filterByPriceRange, resetFilters } = productSlice.actions
 export default productSlice.reducer

@@ -34,8 +34,14 @@ export default function FilterBar({minValue, maxValue, checkboxValue}) {
                 onChange={(value, index) => dispatch(filterByPriceRange(value))}
             /> 
             <div className='discount-block'>
-              <input type="checkbox" name="discounted" onChange={(e)=>checkboxValue(e.target.checked)}/>
-              <label htmlFor="discounted"> Discounted</label>
+              <label className='discount-block-label'>
+                <input 
+                  type="checkbox" 
+                  onChange={(e)=>checkboxValue(e.target.checked)}
+                />
+                <span className='checkmark'></span>
+               Discounted
+              </label>
             </div> 
             <div className="sort_block">
               <select 
