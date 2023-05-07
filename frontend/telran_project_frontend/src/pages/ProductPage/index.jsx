@@ -11,10 +11,10 @@ export default function ProductPage() {
   const [discounted, setDiscounted] = useState()
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(resetFilters())
-  }, [])
+  useEffect(() => { dispatch(resetFilters())}, [])
   
+  const status = useSelector(state => state.product.status)
+
   let header;
 
   let products = useSelector(state => {
@@ -29,12 +29,11 @@ export default function ProductPage() {
     return state.product.list
   }
   )
-  
-  console.log(products);
+
   const prices = products.map(({final_price}) => final_price)
   const min = Math.min(...prices)
   const max = Math.max(...prices)
-
+  
   if (discounted) {
     products = products.filter(({discont_price}) => discont_price !== null)
   }
@@ -42,8 +41,10 @@ export default function ProductPage() {
   return (
     <div>
       {
-        products === [] 
-        ? <p>Loading...</p>
+        status === "Loading" 
+        ? <div className={s.container}>
+            <p>Loading...</p>
+          </div>
         : <div className={s.container}>
         <h1>{header}</h1>
         <FilterBar minValue={min} maxValue={max} checkboxValue={setDiscounted}/>

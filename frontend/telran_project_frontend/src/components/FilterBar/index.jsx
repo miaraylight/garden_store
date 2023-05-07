@@ -6,10 +6,8 @@ import { filterByPriceRange, sortByPrice } from '../../store/slice/productSlice'
 
 export default function FilterBar({minValue, maxValue, checkboxValue}) {
   const dispatch = useDispatch()
-  maxValue = isNaN(maxValue) ? 0 : maxValue
-  console.log(maxValue);
-  minValue = isNaN(minValue) ? 0 : minValue
-  console.log(minValue);
+  minValue = isNaN(minValue) ? 0 :  minValue;
+  maxValue = isNaN(maxValue ) ? 0 :  maxValue ;
   return (
     <div className="container">
           <div className="toolbar">
@@ -28,7 +26,7 @@ export default function FilterBar({minValue, maxValue, checkboxValue}) {
                 ariaValuetext={state => `Thumb value ${state.valueNow}`}
                 renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
                 pearling
-                minDistance={10}
+                minDistance={13}
                 max={maxValue}
                 min={minValue}
                 onChange={(value, index) => dispatch(filterByPriceRange(value))}
