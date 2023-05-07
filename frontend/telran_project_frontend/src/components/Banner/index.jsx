@@ -8,8 +8,8 @@ export default function Banner() {
     <div className={s.container}>
       <div className={s.banner}>
         <div className={s.banner_content}>
-          <h3>SaleW</h3>
-          <p>New season</p>
+          <h3>New Season</h3>
+          <p>Unique deals & offers every single day</p>
           <Link to={link}>
             <button>Shop now</button></Link>
         </div>

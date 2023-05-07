@@ -6,7 +6,7 @@
     margin: 0 auto;
     max-width: var(--width);
     /* height: 37.5rem; */
-    padding: 1.875rem;
+    padding: 1.875rem 0;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     background: var(--lightBack);
@@ -27,13 +27,13 @@
     line-height: 1em;
 }
 .banner h3{
-    font-size: 5rem;
+    font-size: 3.375rem;
     padding: 0.625rem;
     color: var(--black);
     font-family: DM Serif Display;
 }
 .banner p {
-    font-size: 3.9rem;
+    font-size: 1rem;
     margin-top: 1rem;
     padding: 0.625rem;
     color: var(--grey);

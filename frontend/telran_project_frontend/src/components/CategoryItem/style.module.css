@@ -1,17 +1,40 @@
 .card{
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    padding: 0.5rem;
+    position: relative;
 }
-.card_image{
-    
+.card_image_wrapper{
+    width: calc(var(--width)/4);
+    height: calc(var(--width)/4); 
 }
 
-.card_image img{
-    width: 300px;
-    height: 300px;
+.card_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }    
 .card_title{
+    width: 90%;
+    padding: 2% 0;
     text-align: center;
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    z-index: 3;
+    background-color: #ffffffe5;
+    text-transform: uppercase;
+    color: var(--black);
+}
+.card_title p{
+    font-family: DM serif Display;
+    font-size: 18px;
+    font-weight: 700;
+}
+.card_title span{
+    opacity: .5;
+    font-size: 12px;
+    font-family: inherit;
 }
