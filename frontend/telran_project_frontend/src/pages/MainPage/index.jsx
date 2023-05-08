@@ -24,7 +24,7 @@ export default function MainPage() {
           }
         </div>
       </div>
-      
+      <GetDiscountForm/>
       <div className={s.main_element}>
         <Link to={'/product/sale'}>Sale</Link>
         <h3>Some header text</h3>
