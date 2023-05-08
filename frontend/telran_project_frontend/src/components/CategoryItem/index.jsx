@@ -8,7 +8,7 @@ export default function CategoryItem({id, title, image}) {
   const productsInCategory = useSelector(state => state.product.list.filter(({ categoryId }) => +categoryId === +id).length)
   return (
     <Link to={link}>
-      <div className={s.card}>
+      <div className={s.category_card}>
           <div className={s.card_image_wrapper}>
             <img className={s.card_image} src={`http://localhost:3333/${image}`} alt="category" />
           </div>

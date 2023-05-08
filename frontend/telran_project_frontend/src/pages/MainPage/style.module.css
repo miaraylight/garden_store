@@ -1,7 +1,7 @@
 .container{
     border: 1px solid red;
 }
-.main_categories{
+.main_element{
     max-width: var(--width);
     margin: 0 auto;
     display: flex;
@@ -9,12 +9,12 @@
     align-items: center;
     padding: 1.875rem 0;
 }
-.main_categories a{
+.main_element a{
     font-size: 15px;
     color: var(--darkGrey);
     font-family: DM serif Display;
 }
-.main_categories h3{
+.main_element h3{
     font-size: 42px;
     color: var(--black);
     font-family: DM serif Display;

@@ -1,16 +1,96 @@
-.card{
+.product_card{
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid red;
 }
-.card_img img{
+
+.card_img_block{
+    position: relative;
+}
+/**************************/
+.card_top{
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 5;
+}
+.card_img_block img{
+
+}
+.temp{
     width: 300px;
-    height: 300px;
+height: 400px;
 }
-.card_img button{
-    display: none;
+
+.card_toolbar{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
 }
-.card_price{
+
+.discount_percentage{
+    background: white;
+    box-shadow: 0px 3px 15px -3px rgba(34, 60, 80, 0.277);
+    padding: 6px;
+    border-radius: 20px;
+    font-size: .87rem;
+    font-family: inherit;
+    color: var(--grey);
+}
+.basket {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    gap: 5px;
+    border: none;
+}
+.basket_pop_up{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.719);
+    color: white;
+    font-family: inherit;
+    border-radius: 3px;
+}
+.basket_btn {
+    width: 33px;
+    height: 33px;
+    border-radius: 100%;
+    border: none;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 3px 15px -3px rgba(34, 60, 80, 0.277);
+    margin-left: auto;
+    transition: all .7s;
+}
+.basket_btn img{
+    width: 60%;
+    height: 60%;
+}
+.basket_btn:hover{
+    transform: scale(1.05);
+    background: white;
+}
+
+/**********************************/
+.card_content_block{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.card_title{
+    font-size: 22px;
+    font-family: DM serif Display;
+}
+.card_price_block{
     display: flex;
     justify-content: space-evenly;
 }
@@ -18,7 +98,4 @@
     text-decoration: line-through;
     color: grey;
 }
-.discount_percentage{
-    color: #FF32A1;
 
-}

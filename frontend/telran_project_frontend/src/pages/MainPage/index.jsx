@@ -15,7 +15,7 @@ export default function MainPage() {
   return (
     <div className={s.container}>
       <Banner/>
-      <div className={s.main_categories}>
+      <div className={s.main_element}>
         <Link to={'/categories'}>Categories</Link>
         <h3>Some header text</h3>
         <div className={s.categories_container}>
@@ -24,12 +24,16 @@ export default function MainPage() {
           }
         </div>
       </div>
-      
-      <div className={s.sales_container}>
+      <div className={s.main_element}>
+        <Link to={'/product/sale'}>Sale</Link>
+        <h3>Some header text</h3>
+        <div className={s.sales_container}>
         {
           productsOnSale.map(item => <ProductItem key={item.id} {...item}/>)
         }
       </div>
+      </div>
+      
     </div>
   )
 }
