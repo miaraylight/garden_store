@@ -5,14 +5,18 @@
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 20px;
+    transition: all .7s;
+}
+.product_card:hover {
+    box-shadow: 0px 4px 17px 0px rgba(34, 60, 80, 0.23);
+    transform: scale(1.01);
 }
 
 .card_img_block{
     width: 100%;
     position: relative;
 }
-.product_card a{
-}
+
 .card_img {
     width: calc(var(--width)/3-20px);
     height: calc(var(--width)/3.5-20px);
@@ -108,12 +112,12 @@
     gap: 5px;
     font-family: inherit;
     font-size: 13.5px;
-    color: var(--black);
+    color: var(--darkGrey);
     font-weight: 700;
     line-height: 1.3;
 }
 .price{
     text-decoration: line-through;
-    color: grey;    
+    color: var(--lightGrey);    
 }
 

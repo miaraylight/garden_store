@@ -8,9 +8,18 @@ export default function CategoriesPage() {
 
   return (
     <div className={s.container}>
-      {
-        categories.map(item => <CategoryItem key={item.id} {...item}/>)
-      }
+      <div className={s.title_wrapper}>
+        <h3>All Categories</h3>
+      </div>
+      <div className={s.wrapper}>
+        <div className={s.categories_wrapper}>
+          {
+            categories.map(item => <CategoryItem key={item.id} {...item}/>)
+          }
+        </div>
+      </div>
+      
+      
     </div>
   )
 }
