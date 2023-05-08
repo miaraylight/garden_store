@@ -24,16 +24,16 @@ export default function MainPage() {
           }
         </div>
       </div>
+      
       <div className={s.main_element}>
         <Link to={'/product/sale'}>Sale</Link>
         <h3>Some header text</h3>
         <div className={s.sales_container}>
-        {
-          productsOnSale.map(item => <ProductItem key={item.id} {...item}/>)
-        }
+          {
+            productsOnSale.map(item => <ProductItem key={item.id} {...item}/>)
+          }
+        </div>
       </div>
-      </div>
-      
     </div>
   )
 }

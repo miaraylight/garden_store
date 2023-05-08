@@ -9,9 +9,11 @@ export default function ProductItem({
   discont_price,
   image,
 }) {
+  
   const link = `/product/item/${id}`;
   const [toggleBasketBtn, setToggleBasketBtn] = useState({ display: "none" });
   const [togglePopUp, setTogglePopUp] = useState({ display: "none" });
+  
   return (
     <div className={s.product_card}>
       <div 
@@ -59,20 +61,23 @@ export default function ProductItem({
             </button>
           </div>
         </div>
-
-        <img
-          className={s.temp}
+        <div className={s.card_img} >
+          <img
           src={`http://localhost:3333/${image}`}
           alt="product"
         />
+        </div>
+        
       </div>
 
       <Link to={link}>
-        <div className={s.card_content_block}></div>
-        <p className={s.card_title}>{title}</p>
-        <div className={s.card_price_block}>
-          <p className={s.dicount_price}>{discont_price}</p>
-          <p className={s.price}>{price}</p>
+        <div className={s.card_content_block}>
+          <p className={s.card_title}>{title}</p>
+          <div className={s.card_price_block}>
+            <p className={s.price}>${price}</p>
+            <p className={s.dicount_price}>${discont_price}</p>
+            
+          </div>
         </div>
       </Link>
     </div>
