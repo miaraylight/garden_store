@@ -14,7 +14,7 @@ export default function Header() {
 
       <div className={s.links_wrapper}>
         <NavLink className={s.link} to='/'>Home</NavLink>
-        <NavLink>Contact</NavLink>
+        <NavLink className={s.link} to='/contact'>Contact</NavLink>
         <NavLink className={s.link_basket} to='/basket'>
           <img src={process.env.PUBLIC_URL + '/images/basket-icon.png'} alt="basket-icon" /> 
         </NavLink>

@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchProducts } from '../../store/slice/productSlice';
 import { fetchCategories } from '../../store/slice/categorySlice';
+import ContactPage from '../../pages/ContactPage';
 
 function App() {
   const dispatch = useDispatch()
@@ -33,6 +34,7 @@ function App() {
         <Route path='/product/:sale' element={<ProductPage/>}/>
         <Route path='/categories/:category' element={<ProductPage/>}/>
         <Route path='/product/item/:productId' element={<ProductDescriptionPage/>}/>
+        <Route path='/contact' element={<ContactPage/>}/>
       </Routes>
       <Footer/>
     </div>
