@@ -1,59 +1,100 @@
 .container{
     padding: 38px 46px;
+    background-color: var(--lightBack);
 }
-.contact_info{
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-}
-.number_wrapper{
-   display: grid;
-   grid-template-columns: 100%;
-   grid-template-rows: 75px 100px 100px;
-   padding: 0 5px; 
-}
-.number{
-    font-size: 70px;
-    font-weight: 600;
-}
-.social_media_wrapper{
+.footer{
+    max-width: var(--width);
+    margin: 0 auto;
     display: flex;
+    justify-content: space-between;
+    padding: 20px 28px;
 }
-.contact_media{
+.footer_title{
+    font-family: DM serif Display;
+    font-size: 21px;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+.footer_logo_link {
+    color: var(--khaki);
+    font-family: DM Serif Display;
+    font-size: 29px;
+    font-weight: bold;
+    text-transform: none;
     display: flex;
     flex-direction: column;
-    font-size: 15px;
-    justify-content: space-evenly;
     align-items: center;
-    margin-right: 5px;  
+    letter-spacing: 1px;
+    line-height: 1.5;
 }
-.contact_media img{
-    width: 44px;
-    height: 44px;
+.footer_logo_link span{
+    color: var(--lightGrey);
+    text-transform: uppercase;
+    font-family: 'DM Sans',sans-serif;
+    font-size: 13px;
+    font-weight: lighter;
+    letter-spacing: 2px;
 }
-.head{
-    font-size: 40px;
-    font-weight: 700;
+.footer_links a {
+    color: var(--khaki);
+    transition: color .7s;
 }
-.address_wrapper{
-    padding-left: 100px;
-    display: grid;
-    grid-template-rows: 75px 100px 100px;
+.footer_links a:hover{
+    color: var(--lightKhaki);
 }
-.address_wrapper a{
-    font-size: 40px;
-    font-weight: 600;
+.footer_links div, 
+.footer_subscribe_form div{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   font-family: inherit;
+   font-size: 15px;
+}
 
-}
-.working_hours_wrapper{
+/***************************/
+.social_links {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+}
+.social_links a {
+    background-color: white;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    padding: 5px;
+    
 }
-.working_hours_wrapper span{
-    font-size: 18px;
-    font-weight: 500;
+.social_links a:not(:last-child) {
+    margin-right: 10px;
 }
-.working_hours_wrapper p{
-    font-size: 24px;
-    font-weight: 600;
+
+.social_links img{
+    width: 20px;
+    height: 20px;
+    transition: transform .7s;
+}
+.social_links a img:hover {
+    transform: scale(1.08);
+}
+.subscribe_form input{
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+.subscribe_form button {
+    font-family: inherit;
+    background-color: var(--khaki);
+    color: var(--white);
+    width: 8.7rem;
+    height: 2.6rem;
+    font-size: 1rem;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1em;
+    transition: background-color .7s;
+}
+.subscribe_form button:hover {
+    background-color: var(--lightKhaki);
 }

@@ -40,13 +40,13 @@ export default function ContactPage() {
               <a href="https://www.instagram.com/" className={s.contact_media}>
                 <img src={process.env.PUBLIC_URL + '/images/instagram-icon.png'} alt="instagram-icon" />
               </a>
-              <a href="https://www.instagram.com/" className={s.contact_media}>
+              <a href="https://www.linkedin.com/in/malika-taitelieva-88b333273/" className={s.contact_media}>
                 <img src={process.env.PUBLIC_URL + '/images/ln-icon.png'} alt="ln-icon" />
               </a>
-              <a href="https://www.instagram.com/" className={s.contact_media}>
+              <a href="https://www.youtube.com/" className={s.contact_media}>
                 <img src={process.env.PUBLIC_URL + '/images/youtube-icon.png'} alt="youtube-icon" />
               </a>
-              <a href="https://www.instagram.com/" className={s.contact_media}>
+              <a href="https://t.me/sirokko01" className={s.contact_media}>
                 <img src={process.env.PUBLIC_URL + '/images/telegram-icon.png'} alt="telegram-icon" />
               </a>
             </div>
