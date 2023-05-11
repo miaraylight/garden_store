@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import s from "./style.module.css";
 import { Link } from "react-router-dom";
+import { addItemToBasket } from "../../store/slice/basketSlice";
+import { useDispatch } from 'react-redux'
 
 export default function ProductItem({
   id,
@@ -13,6 +15,7 @@ export default function ProductItem({
   const link = `/product/item/${id}`;
   const [toggleBasketBtn, setToggleBasketBtn] = useState({ display: "none" });
   const [togglePopUp, setTogglePopUp] = useState({ display: "none" });
+  const dispatch = useDispatch()
   
   return (
     <div className={s.product_card}>
@@ -49,8 +52,10 @@ export default function ProductItem({
               <span className={s.basket_pop_up} 
               style={togglePopUp}
               >Add to cart</span>
-              <div className={s.basket_btn} 
+              <div 
+              className={s.basket_btn} 
               style={toggleBasketBtn}
+              onClick={()=>dispatch(addItemToBasket(id))}
               >
                 <img 
                   src={process.env.PUBLIC_URL + "/images/basket-icon.png"}
