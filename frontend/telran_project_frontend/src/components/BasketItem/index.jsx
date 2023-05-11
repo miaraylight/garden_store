@@ -2,23 +2,26 @@ import React from 'react'
 import s from './style.module.css'
 
 export default function BasketItem({id, title, price, final_price, count, image}) {
-  return (
-    <div>
-        <div className={s.image}>
-            <img src="" alt="" />
+    const subtotal = count * final_price
+    return (
+    <div className={s.basketItem_wrapper}>
+        <div className={s.basketItem_image}>
+            <img src={`http://localhost:3333${image}`} alt="product" />
         </div>
-        <div className={s.price_block}>
-            <p className={s.price}></p>
-            <p className={s.final_price}>{final_price}</p>
+        <p className={s.basketItem_title}>{title}</p>
+        <div className={s.basketItem_priceBlock}>
+            <p className={s.price}>${price}</p>
+            <p className={s.final_price}>${final_price}</p>
         </div>
         
-        <div>
-            <button className={s.minus}>-</button>
-            <p className={s.count}>{count}</p>
-            <button className={s.minus}>+</button>
+        <div className={s.basketItem_toolbar}>
+            <button>-</button>
+            <p>{count}</p>
+            <button>+
+            </button>
         </div>
-        <p className={s.subtotal}></p>
-        <button className={s.delete}>U+02715</button>
+        <p className={s.basketItem_subtotal}>${subtotal}</p>
+        <button className={s.basketItem_deleteBtn}>&#10005;</button>
     </div>
   )
 }

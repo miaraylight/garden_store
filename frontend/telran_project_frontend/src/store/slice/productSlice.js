@@ -39,7 +39,6 @@ export const productSlice = createSlice({
         state.list.forEach(item => item.show = item.final_price >= payload[0] && item.final_price <= payload[1])
       },
       resetFilters(state){
-        console.log("hi");
         state.list = state.list.map(item => ({...item, show: true}))
       }
 
