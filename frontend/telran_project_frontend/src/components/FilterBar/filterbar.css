@@ -2,7 +2,7 @@
     font-family: inherit;
     font-size: 15px;
     color: var(--grey);
-    margin: 1rem 0;
+    margin-bottom: 1rem;
 }
 .toolbar {
     height: 5rem;

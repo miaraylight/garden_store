@@ -5,6 +5,7 @@ import ProductItem from '../../components/ProductItem';
 import s from './style.module.css'
 import FilterBar from '../../components/FilterBar';
 import { resetFilters } from '../../store/slice/productSlice';
+import BreadCrumbs from '../../components/BreadCrumbs';
 
 export default function ProductPage() {
   const { category, sale } = useParams()
@@ -25,7 +26,7 @@ export default function ProductPage() {
       header = state.category.list.find(({id}) => +id === +category)?.title
       return state.product.list.filter(({categoryId})=> +categoryId === +category)
     }
-    header = "All products"
+    header = "Shop"
     return state.product.list
   }
   )
@@ -46,7 +47,7 @@ export default function ProductPage() {
             <p>Loading...</p>
           </div>
         : <div className={s.container}>
-        <h1>{header}</h1>
+        <BreadCrumbs props={header}/>
         <FilterBar 
           minValue={min} 
           maxValue={max}

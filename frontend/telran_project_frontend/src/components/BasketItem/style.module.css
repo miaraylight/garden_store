@@ -8,6 +8,11 @@
     font-size: 15px;
     padding: 10px;
 }
+.basketItem_wrapper a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 .basketItem_image {
     width: 100px;
     height: auto;
@@ -54,6 +59,7 @@
 .basketItem_toolbar button{
     font-size: 20px;
     font-weight: 100;
+    cursor: pointer;
 }
 .basketItem_toolbar button:hover{
     color: var(--lightGrey);
@@ -67,6 +73,8 @@
     color: var(--lightGrey);
     border-radius: 50%;
     transition: border .7s, color .7s;
+    cursor: pointer;
+    vertical-align: middle;
 }
 .basketItem_deleteBtn:hover{
     border: 1px solid var(--darkGrey);

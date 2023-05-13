@@ -10,12 +10,9 @@ export default function BasketPage() {
     const target = product.list.find(({id}) => item.id === id)
     return {...target, ...item}
   })
-  console.log(data);
 
   const subtotal = data.reduce((acc, item) => acc + item.price * item.count, 0)
-  console.log(subtotal);
   const total = data.reduce((acc, item) => acc + item.final_price * item.count, 0)
-  console.log(total);
   return (
     <div className={s.container}>
       <h1 className={s.title}>Cart</h1>

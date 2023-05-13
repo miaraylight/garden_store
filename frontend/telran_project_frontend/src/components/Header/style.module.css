@@ -11,7 +11,12 @@
     font-size: 15px;
     border: 1px solid green;
 }
-
+.link {
+    border-bottom: 1px solid transparent;
+}
+.active_link{
+    border-bottom: 1px solid var(--khaki);
+}
 .links_wrapper {
     height: 40px;
     display: flex;
@@ -19,8 +24,6 @@
     justify-content: end;
 }
 .links_wrapper a{
-    border-bottom: 1.5px solid white;
-    padding: 5px;
     color: var(--black);
     white-space: nowrap;
     transition: color .5s, border-bottom-color .5s;
@@ -32,7 +35,26 @@
     border-bottom-color: var(--lightKhaki);
     color: var(--lightKhaki)
 }
-
+.link_basket {
+    padding: 10px;
+    position: relative;
+}
+.link_basket[data-count]::after{
+    content: attr(data-count);
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 18px;
+    min-height: 18px;
+    background-color: var(--khaki);
+    font-size: 13px;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
 .link_basket img{
     width: 25px;
     height: 25px;
