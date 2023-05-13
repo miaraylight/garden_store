@@ -1,68 +1,182 @@
 .container{
-    display: flex;
-    flex-direction: column;
+    background-color: var(--lightBack);
+    padding: 40px 0;
 }
 .content{
+    max-width: var(--width);
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    font-family: inherit;
+    color: var(--darkGrey);
+}
+/************************************/
+.product_item{
     display: grid;
-    grid-template-columns: repeat(2, 50%);
-
+    grid-template-columns: repeat(2, 48%);
+    gap: 4%;
 }
-.img_wrapper{
-    padding: 1rem;
+/*************************************/
+.product_item_img{
+    border: 1px solid black;
 }
-.img_wrapper img{
+.product_item_img img{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
-.info_wrapper{
-    height: 70%;
+/*************************************/
+.product_item_info{
+    border: 1px solid red;
+}
+.product_item_info h1{
+    font-family: DM serif Display;
+    color: var(--black);
+    font-size: 50px;
+    margin-bottom: 20px ;
+}
+.product_item_price_block {
+    
+}
+.product_item_price{
+    display: flex;
+    align-items: baseline;
+    font-size: 22px;
+    gap: 5px;
+    margin-bottom: 50px;
+}
+.discount_percentage{
+    font-size: 15px;
+}
+.throughed_price{
+    color: var(--lightGrey);
+    text-decoration: line-through;
+    font-weight: 400;
+}
+.final_price{
+    font-weight: 700;
+}
+.dicount_price{
+
+}
+.dicount_price{
+
+}
+.discount_percentage{
+
+}
+/*********************************/
+.product_item_toolbar{
+    display: flex;
+    gap: 10px;
+    
+}
+.product_item_countbar{
+    display: flex;
+    align-items: center;
+    
+}
+.product_item_countbar button,
+.product_item_countbar p{
+    width: 38px;
+    height: 38px;
+    background: transparent;
+    border: 1px solid var(--white);
+    border-collapse: separate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    transition: color .5s;
+}
+.product_item_countbar button{
+    font-size: 20px;
+    font-weight: 100;
+}
+.product_item_countbar button:hover{
+    color: var(--lightGrey);
+}
+.product_item_addBtn{
+    font-family: inherit;
+    background-color: var(--khaki);
+    color: var(--white);
+    height: 3.1rem;
+    font-size: 1rem;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1em;
+    transition: background-color .7s;
+    padding: 0 10px;
+}
+.product_item_addBtn:hover {
+    background-color: var(--lightKhaki);
+}
+/*****************************/
+.product_item_payment{
+    border: 1px solid var(--white);
+    border-radius: 6px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 20px 0;
 }
-.card_price{
-    display: flex;
-    justify-content: space-between;
-    align-items: last baseline;
-}
-.content span{
-    font-size: 1.25rem;
+.product_item_payment p{
+    margin: -15px 5px 15px 5px;
+    background-color: white;
+    padding: 5px;
+    text-transform: capitalize;
     font-weight: 600;
+    font-size: 14px;
 }
-.price{
-    font-size: 4.375rem;
-    font-weight: 700;
+.product_item_payment_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
 }
-
-.dicount_price{
-    font-size: 4.375rem;
-    font-weight: 700;
+.product_item_payment_img{
+    height: 50px;
 }
-.throughed_price{
-    font-size: 1.25rem;
-    text-decoration: line-through;
-    color: grey;
+.icon{
+    width: 50px;
+    height: 43px;
 }
-.discount_percentage{
-    color: #FF32A1;
-    font-size: 1.75rem;
-}
-.add_button{
-    width: 60%;
-    height: 5.375rem;
-    background: #339933;
-    color: white;
-    font-size: 1.75rem;
-    font-weight: 700;
-    border-radius: 0.625rem;
-    border: none;
-    margin: 2.5rem 0;
-}
-.descr{
+/*********************************/
+.product_item_payment_info{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 1.625rem 0;
-    border-top: 2px dashed grey;
+}
+.product_item_payment_info p{
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    padding: 5px 0;
+}
+.product_item_payment_info svg{
+    fill: var(--darkGrey);
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+/********************************/
+.product_descr{
+    margin: 30px 0;
+    padding: 20px 0;
+    border: 1px solid green;
+    display: flex;
+}
+.product_descr span{
+    font-family: DM serif Display;
+    font-size: 18px;
+    color: var(--black);
+    margin-right: 50px;
+}
+.product_descr p{
+    line-height: 1.8;
+    color: var(--lightGrey);
 }
