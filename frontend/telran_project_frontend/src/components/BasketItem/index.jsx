@@ -18,7 +18,7 @@ export default function BasketItem({id, title, price, final_price, count, image}
         </div>
         
         <div className={s.basketItem_toolbar}>
-            <button onClick={()=>dispatch(basketItemDecrement(id))}>-</button>
+            <button onClick={()=>dispatch(basketItemDecrement(id))}>&#8211;</button>
             <p>{count}</p>
             <button onClick={()=>dispatch(basketItemIncrement(id))}>+ </button>
         </div>

@@ -6,7 +6,7 @@
     max-width: var(--width);
     margin: 0 auto;
     background-color: white;
-    padding: 30px;
+    padding: 40px 50px;
     font-family: inherit;
     color: var(--darkGrey);
 }
@@ -14,21 +14,50 @@
 .product_item{
     display: grid;
     grid-template-columns: repeat(2, 48%);
+    grid-template-rows: 700px;
     gap: 4%;
 }
 /*************************************/
 .product_item_img{
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 .product_item_img img{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto
 }
 /*************************************/
 .product_item_info{
     border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+.product_item_switchBtn{
+    display: flex;
+    gap: 5px;
+    justify-content: end;  
+}
+.product_item_switchBtn button{
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    border: none;
+    background-color: var(--khaki);
+    width: 30px;
+    height: 30px;
+    font-size: 19px;
+    text-align: center;
+    transition: background-color .6s;
+}
+.product_item_switchBtn button:hover{
+    background-color: var(--lightKhaki);
+}
+
 .product_item_info h1{
     font-family: DM serif Display;
     color: var(--black);
@@ -69,7 +98,7 @@
 .product_item_toolbar{
     display: flex;
     gap: 10px;
-    
+    align-items: center;
 }
 .product_item_countbar{
     display: flex;
@@ -114,6 +143,7 @@
 }
 /*****************************/
 .product_item_payment{
+    height: 120px;
     border: 1px solid var(--white);
     border-radius: 6px;
     display: flex;
@@ -123,9 +153,10 @@
     font-weight: 700;
     font-size: 15px;
     margin: 20px 0;
+    
 }
 .product_item_payment p{
-    margin: -15px 5px 15px 5px;
+    margin: -35px 5px 15px 5px;
     background-color: white;
     padding: 5px;
     text-transform: capitalize;

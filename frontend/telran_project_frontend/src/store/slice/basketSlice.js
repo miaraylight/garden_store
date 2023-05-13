@@ -24,15 +24,16 @@ export const basketSlice = createSlice({
     },
     reducers: {
         addItemToBasket(state, {payload}){
-            const target = state.list.find(item => item.id === payload)
+            const target = state.list.find(item => item.id === payload.product_id)
             if (target === undefined) {
-               state.list = [...state.list, {id: payload, count: 1}]
+               state.list = [...state.list, {id: payload.product_id, count: payload.product_count ?? 1}]
             }else{
-                target.count++
+                target.count += payload.product_count ?? 1
             }
             
         },
         deleteItemFromBasket(state, {payload}){
+            
             state.list = state.list.filter(({id}) => id !== payload)
         },
         basketItemIncrement(state, {payload}){

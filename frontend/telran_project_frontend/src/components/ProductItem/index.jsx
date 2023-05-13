@@ -55,7 +55,7 @@ export default function ProductItem({
               <div 
               className={s.basket_btn} 
               style={toggleBasketBtn}
-              onClick={()=>dispatch(addItemToBasket(id))}
+              onClick={()=>dispatch(addItemToBasket({product_id: id}))}
               >
                 <img 
                   src={process.env.PUBLIC_URL + "/images/basket-icon.png"}
