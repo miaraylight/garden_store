@@ -1,8 +1,11 @@
 import React from 'react'
 import s from './style.module.css'
+import { useDispatch } from 'react-redux'
+import { basketItemDecrement, basketItemIncrement, deleteItemFromBasket } from '../../store/slice/basketSlice'
 
 export default function BasketItem({id, title, price, final_price, count, image}) {
-    const subtotal = count * final_price
+    const dispatch = useDispatch()
+    const subtotal = count * price
     return (
     <div className={s.basketItem_wrapper}>
         <div className={s.basketItem_image}>
@@ -15,13 +18,12 @@ export default function BasketItem({id, title, price, final_price, count, image}
         </div>
         
         <div className={s.basketItem_toolbar}>
-            <button>-</button>
+            <button onClick={()=>dispatch(basketItemDecrement(id))}>-</button>
             <p>{count}</p>
-            <button>+
-            </button>
+            <button onClick={()=>dispatch(basketItemIncrement(id))}>+ </button>
         </div>
         <p className={s.basketItem_subtotal}>${subtotal}</p>
-        <button className={s.basketItem_deleteBtn}>&#10005;</button>
+        <button className={s.basketItem_deleteBtn} onClick={()=>dispatch(deleteItemFromBasket(id))}>&#10005;</button>
     </div>
   )
 }

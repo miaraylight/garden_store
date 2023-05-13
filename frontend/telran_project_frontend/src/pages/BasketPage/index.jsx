@@ -12,12 +12,21 @@ export default function BasketPage() {
   })
   console.log(data);
 
+  const subtotal = data.reduce((acc, item) => acc + item.price * item.count, 0)
+  console.log(subtotal);
+  const total = data.reduce((acc, item) => acc + item.final_price * item.count, 0)
+  console.log(total);
   return (
     <div className={s.container}>
       <h1 className={s.title}>Cart</h1>
       <div className={s.basket}>
         <div className={s.basket_items_block}>
-          <div className={s.basket_items_header}></div>
+          <div className={s.basket_items_header}>
+            <p>Product</p>
+            <p>Price</p>
+            <p>Quantity</p>
+            <p>Subtotal</p>
+          </div>
           <div className={s.basket_items}>
             {
               data.map(item => <BasketItem key={item.id} {...item}/>)
@@ -25,7 +34,21 @@ export default function BasketPage() {
           </div>
         </div>
         <div className={s.basket_total_block}>
-          <div className={s.basket_total_header}></div>
+          <div className={s.basket_total_header}>
+            <p>Card totals</p>
+          </div>
+          <div className={s.basket_total_content}>
+            <div className={s.basket_calculation}>
+              <p>Subtotal</p>
+              <span>${subtotal}</span>
+            </div>
+            <div className={s.basket_calculation}>
+              <p>Total</p>
+              <span>${total}</span>
+            </div>
+            <button className={s.basket_checkout}>Proceed to checkout</button>
+          </div>
+
         </div>
       </div>
     </div>

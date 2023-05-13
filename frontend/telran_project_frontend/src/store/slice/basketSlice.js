@@ -36,10 +36,12 @@ export const basketSlice = createSlice({
             state.list = state.list.filter(({id}) => id !== payload)
         },
         basketItemIncrement(state, {payload}){
-            state.list = state.list.find(({id}) => id === payload).count++
+            const target = state.list.find(({id}) => id === payload)
+            target.count++
         },
         basketItemDecrement(state, {payload}){
-            state.list = state.list.find(({id}) => id === payload).count--
+            const target = state.list.find(({id}) => id === payload)
+            target.count--
         }
     }
 })

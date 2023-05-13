@@ -5,7 +5,7 @@ import s from './style.module.css'
 
 export default function ProductDescriptionPage() {
     const { productId } = useParams()
-    const product = useSelector(state => state.product.find(({id}) => id === +productId))
+    const product = useSelector(state => state.product.list.find(({id}) => id === +productId))
     const { id, title, price, discont_price, image, description } = product;
   return (
     <div className={s.container}>
