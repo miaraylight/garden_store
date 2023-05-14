@@ -3,6 +3,7 @@ const express = require('express');
 const categories = require('./routes/categories');
 const sale = require('./routes/sale');
 const order = require('./routes/order');
+const feedback = require('./routes/feedback');
 const products = require('./routes/products');
 const sequelize = require('./database/database');
 const cors = require('cors')
@@ -23,6 +24,7 @@ app.use('/categories', categories);
 app.use('/products', products);
 app.use('/sale', sale);
 app.use('/order', order);
+app.use('/feedback', feedback);
 
 
 
