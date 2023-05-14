@@ -1,8 +1,29 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import s from './style.module.css'
+import { useForm } from 'react-hook-form'
 
 export default function Footer() {
+    const { register, handleSubmit, reset } = useForm()
+    const onSubmitHandler = async(data) => {
+        try{
+          const response = await fetch('http://localhost:3333/feedback/send', {
+            method: 'POST',
+            headers: {
+              Accept: data
+            }
+          })
+          if (response.ok) {
+            const jsonResponse = await response.json()
+            console.log(jsonResponse.message);
+          }
+        }
+        catch(error){
+          console.log(error);
+        }
+        
+        reset()
+      }
   return (
     <div className={s.container}>
         <div className={s.footer}>
@@ -39,10 +60,10 @@ export default function Footer() {
             </div>
             <div className={s.footer_subscribe_form}>
                 <p className={s.footer_title}>Subscribe to Our Newsletter</p>
-                <div className={s.subscribe_form}>
-                    <input type="text" placeholder='Your email adress...'/>
+                <form className={s.subscribe_form} onSubmit={handleSubmit(onSubmitHandler)}>
+                    <input type="text" placeholder='Your email adress...' {...register('email', {required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g})}/>
                     <button>Subscribe</button>
-                </div>
+                </form>
             </div>
         </div>
         

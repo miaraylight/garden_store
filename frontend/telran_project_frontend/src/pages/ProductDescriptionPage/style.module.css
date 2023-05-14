@@ -19,16 +19,52 @@
 }
 /*************************************/
 .product_item_img{
+    border: 1px sienna solid;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
+    cursor: none;
+    position: relative;
+}
+.product_item_img:hover .loupe{
+    display: block;
+}
+.product_item_img:hover .enlarged_block{
+    display: block;
 }
 .product_item_img img{
     width: 100%;
     height: auto
 }
+.loupe{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    display: none;
+    z-index: 5;
+}
+.loupe svg{
+    width: 30px;
+    height: 30px;
+    fill: var(--khaki);
+}
+.enlarged_block{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    display: none;
+    pointer-events: none;
+}
+
 /*************************************/
 .product_item_info{
     border: 1px solid red;
