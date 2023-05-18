@@ -36,7 +36,7 @@
     display: flex;
     align-items: center;
     padding: 0 10px;
-    z-index: 5;
+    z-index: 4;
 }
 .card_toolbar{
     margin-left: auto;

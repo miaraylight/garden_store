@@ -37,7 +37,13 @@
 }
 .link_basket {
     padding: 10px;
+    border: none;
+    background: transparent;
     position: relative;
+    transition: transform 0.4s;
+}
+.link_basket:hover{
+    transform: scale(1.05);
 }
 .link_basket[data-count]::after{
     content: attr(data-count);

@@ -11,11 +11,12 @@ export default function CategoryItem({id, title, image}) {
       <div className={s.category_card}>
           <div className={s.card_image_wrapper}>
             <img className={s.card_image} src={`http://localhost:3333/${image}`} alt="category" />
+            <div className={s.card_title}>
+              <p>{title}</p>
+              <span>{productsInCategory} products</span>
+            </div> 
           </div>
-          <div className={s.card_title}>
-            <p>{title}</p>
-            <span>{productsInCategory} products</span>
-          </div>  
+           
       </div>
     </Link>
     
