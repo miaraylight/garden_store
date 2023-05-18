@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import s from './style.module.css'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify';
 
 export default function Footer() {
     const { register, handleSubmit, reset } = useForm()
@@ -16,10 +17,12 @@ export default function Footer() {
           if (response.ok) {
             const jsonResponse = await response.json()
             console.log(jsonResponse.message);
+            toast.success('Thank you for your subscribing!')
           }
         }
         catch(error){
           console.log(error);
+          toast.error('Something went wrong !')
         }
         
         reset()
@@ -66,7 +69,6 @@ export default function Footer() {
                 </form>
             </div>
         </div>
-        
     </div>
   )
 }

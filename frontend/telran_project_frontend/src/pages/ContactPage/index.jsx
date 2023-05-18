@@ -2,6 +2,8 @@ import React from 'react'
 import s from './style.module.css'
 import FooterMap from '../../components/FooterMap'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify';
+
 
 export default function ContactPage() {
   const { register, handleSubmit, reset } = useForm()
@@ -16,10 +18,12 @@ export default function ContactPage() {
       if (response.ok) {
         const jsonResponse = await response.json()
         console.log(jsonResponse.message);
+        toast('Done!')
       }
     }
     catch(error){
       console.log(error);
+      toast.error('Something went wrong')
     }
     
     reset()

@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import s from './style.module.css'
 import { addItemToBasket } from '../../store/slice/basketSlice'
+import { toast } from 'react-toastify';
+
 
 export default function ProductDescriptionPage() {
     const { productId } = useParams()
@@ -19,6 +21,7 @@ export default function ProductDescriptionPage() {
     const onClickHandler = () => {
         const data = { product_id: id, product_count: count }
         dispatch(addItemToBasket(data))
+        toast.success('Added to cart')
     }
 
     const onMouseMoveHandler = ({ nativeEvent }) => {
@@ -29,6 +32,7 @@ export default function ProductDescriptionPage() {
 
     }
     return (
+        
         <div className={s.container}>
             <div className={s.content}>
                 <div className={s.product_item}>
@@ -128,6 +132,7 @@ m-189 -451 c-37 -73 -71 -137 -77 -143 -5 -5 23 56 63 137 40 81 75 145 77
                                 <button onClick={() => setCount(pre => pre + 1)}>+ </button>
                             </div>
                             <button className={s.product_item_addBtn} onClick={onClickHandler}>Add to cart</button>
+                            
                         </div>
                         <div className={s.product_item_payment}>
                             <p>Guaranteed safe checkout</p>
@@ -151,6 +156,7 @@ m-189 -451 c-37 -73 -71 -137 -77 -143 -5 -5 23 56 63 137 40 81 75 145 77
                 </div>
 
             </div>
+            
         </div>
     )
 }

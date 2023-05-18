@@ -1,9 +1,13 @@
 import { useForm } from "react-hook-form";
-import React from 'react'
+import React, { useEffect } from 'react'
 import s from './style.module.css'
+import { ToastContainer, Flip, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function GetDiscountForm() {
   const { register, handleSubmit, reset } = useForm()
+
+
   const onSubmitHandler = async(data) => {
     try{
       const response = await fetch('http://localhost:3333/sale/send', {
@@ -15,10 +19,12 @@ export default function GetDiscountForm() {
       if (response.ok) {
         const jsonResponse = await response.json()
         console.log(jsonResponse.message);
+        toast.info('We sent you a message with a code')
       }
     }
     catch(error){
       console.log(error);
+      toast.error('Something went wrong')
     }
     
     reset()
@@ -41,7 +47,19 @@ export default function GetDiscountForm() {
           <img src={process.env.PUBLIC_URL + '/images/discount-card-img.jpg'} alt="discount_card" />
         </div>
       </div>
-
+      <ToastContainer
+        transition={Flip}
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   )
 }

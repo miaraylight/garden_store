@@ -13,6 +13,8 @@ import { useEffect } from 'react';
 import { fetchProducts } from '../../store/slice/productSlice';
 import { fetchCategories } from '../../store/slice/categorySlice';
 import ContactPage from '../../pages/ContactPage';
+import { ToastContainer, Flip } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const dispatch = useDispatch()
@@ -24,6 +26,19 @@ function App() {
   
   return (
     <div className="App">
+      <ToastContainer
+        transition={Flip}
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Header/>
       <Routes>
         <Route path="/" element={<MainPage/>} />

@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 20px;
-    transition: all .7s;
+    transition: box-shadow .7s;
     position: relative;
 }
 
