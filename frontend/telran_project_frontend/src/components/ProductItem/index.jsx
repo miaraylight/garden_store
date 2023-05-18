@@ -22,7 +22,6 @@ export default function ProductItem({
   }
 
   return (
-
     <div
       className={s.product_card}
       onMouseEnter={(e) => {
@@ -72,7 +71,6 @@ export default function ProductItem({
       </div>
       <Link to={link}>
         <div className={s.card_img_block}>
-
           <div className={s.card_img}>
             <img src={`http://localhost:3333/${image}`} alt="product" />
           </div>

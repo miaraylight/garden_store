@@ -42,7 +42,7 @@
 .modal_content_active{
     padding: 20px;
     background-color: #fff;
-    width: 25vw;
+    width: 30vw;
     height: 100vh;
     transition: 0.4s all;
     transform: scale(1);

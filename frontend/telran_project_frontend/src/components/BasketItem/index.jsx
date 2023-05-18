@@ -10,7 +10,7 @@ export default function BasketItem({id, title, price, final_price, count, image,
     return (
     <div className={s.basketItem_wrapper}>
         <Link to={`/product/item/${id}`}>
-            <div className={s.basketItem_image} style={modal ? {height: '50px'} : {height: 'auto'}}>
+            <div className={s.basketItem_image}>
                 <img src={`http://localhost:3333${image}`} alt="product" />
             </div>
             <p className={s.basketItem_title}>{title}</p>  

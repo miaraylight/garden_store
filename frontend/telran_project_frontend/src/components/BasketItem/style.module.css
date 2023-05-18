@@ -1,5 +1,7 @@
 .basketItem_wrapper{
-    border: 1px solid var(--white);
+    width: 100%;
+    min-height: 100px;
+    border-bottom: 1px solid var(--white);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,19 +13,27 @@
     gap: 10px;
 }
 .basketItem_wrapper a{
+    width: 70%;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 .basketItem_image {
-    width: 100px;
+    width: 30%;
+    height: 100%;
 }
 .basketItem_image img{
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 .basketItem_title{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 70%;
     color: var(--khaki);
     text-transform: capitalize;
 }
@@ -40,6 +50,9 @@
     text-decoration: line-through;
     color: var(--lightGrey);
     margin-right: 10px;
+}
+.final_price{
+    margin-left: 10px;
 }
 
 .basketItem_toolbar{
