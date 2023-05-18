@@ -5,7 +5,7 @@ import CategoryItem from '../../components/CategoryItem'
 
 export default function CategoriesPage() {
   const categories = useSelector(state => state.category.list)
-
+  
   return (
     <div className={s.container}>
       <div className={s.title_wrapper}>
@@ -18,8 +18,6 @@ export default function CategoriesPage() {
           }
         </div>
       </div>
-      
-      
     </div>
   )
 }

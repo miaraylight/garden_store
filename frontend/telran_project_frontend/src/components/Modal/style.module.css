@@ -1,0 +1,114 @@
+.modal{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    z-index: 500;
+}
+
+.modal_active{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    opacity: 1;
+    pointer-events: all;
+}
+.modal_content{
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fff;
+    width: 30vw;
+    height: 100vh;
+    transform: scale(0.5);
+    transition: 0.4s all;
+    z-index: 100;
+    
+}
+.modal_content_active{
+    padding: 20px;
+    background-color: #fff;
+    width: 25vw;
+    height: 100vh;
+    transition: 0.4s all;
+    transform: scale(1);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.modal_basket_header{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+.modal_basket_header h1{
+    font-family: DM serif Display;
+    font-size: 2rem;
+}
+.modal_basket_header button{
+    margin-left: auto;
+    background: transparent;
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--lightKhaki);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: transform 0.4s;
+}
+.modal_basket_header button:hover{
+    transform: scale(1.1);
+}
+.modal_basket_items{
+    height: 70vh;
+    overflow-y: scroll;
+}
+.modal_basket_total{
+    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 1vh;
+}
+.modal_basket_total :first-child{
+    font-family: inherit;
+    font-weight: 700;
+    color: var(--darkGrey);
+
+}
+.modal_basket_total :last-child{
+    color: var(--lightGrey);
+}
+.modal_basket_btn{
+    border: none;
+    font-family: 'DM Sans',sans-serif;
+    background-color: var(--khaki);
+    color: var(--white);
+    padding: 10px 30px;
+    font-size: 1.14rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background-color .7s;
+    margin: 1vh;
+}
+
+.modal_basket_btn:hover {
+    background-color: var(--lightKhaki);
+}

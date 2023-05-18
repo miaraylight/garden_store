@@ -1,8 +1,7 @@
 import { useForm } from "react-hook-form";
-import React, { useEffect } from 'react'
+import React from 'react'
 import s from './style.module.css'
-import { ToastContainer, Flip, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 export default function GetDiscountForm() {
   const { register, handleSubmit, reset } = useForm()
@@ -47,19 +46,6 @@ export default function GetDiscountForm() {
           <img src={process.env.PUBLIC_URL + '/images/discount-card-img.jpg'} alt="discount_card" />
         </div>
       </div>
-      <ToastContainer
-        transition={Flip}
-        position="top-right"
-        autoClose={2000}
-        hideProgressBar
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
     </div>
   )
 }

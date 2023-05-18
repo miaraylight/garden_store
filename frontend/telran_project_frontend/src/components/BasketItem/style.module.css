@@ -7,6 +7,8 @@
     color: var(--darkGrey);
     font-size: 15px;
     padding: 10px;
+    white-space: wrap;
+    gap: 10px;
 }
 .basketItem_wrapper a{
     display: flex;
@@ -15,11 +17,11 @@
 }
 .basketItem_image {
     width: 100px;
-    height: auto;
 }
 .basketItem_image img{
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
+    object-fit: contain;
 }
 .basketItem_title{
     color: var(--khaki);
