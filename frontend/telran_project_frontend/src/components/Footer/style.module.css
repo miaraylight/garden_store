@@ -15,26 +15,7 @@
     padding: 10px 0;
     margin-bottom: 20px;
 }
-.footer_logo_link {
-    color: var(--khaki);
-    font-family: DM Serif Display;
-    font-size: 29px;
-    font-weight: bold;
-    text-transform: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    letter-spacing: 1px;
-    line-height: 1.5;
-}
-.footer_logo_link span{
-    color: var(--lightGrey);
-    text-transform: uppercase;
-    font-family: 'DM Sans',sans-serif;
-    font-size: 13px;
-    font-weight: lighter;
-    letter-spacing: 2px;
-}
+
 .footer_links a {
     color: var(--khaki);
     transition: color .7s;
@@ -88,22 +69,7 @@
     border: none;
     outline: none;
 }
-.subscribe_form button {
-    font-family: inherit;
-    background-color: var(--khaki);
-    color: var(--white);
-    width: 8.7rem;
-    height: 2.6rem;
-    font-size: 1rem;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    line-height: 1em;
-    transition: background-color .7s;
-}
-.subscribe_form button:hover {
-    background-color: var(--lightKhaki);
-}
+
 /***********************************************/
 @media(max-width: 768px){
     .footer{

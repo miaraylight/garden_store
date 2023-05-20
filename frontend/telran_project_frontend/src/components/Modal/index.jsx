@@ -3,6 +3,7 @@ import s from './style.module.css'
 import BasketItem from '../../components/BasketItem'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import MainButton from '../MainButton'
 
 export default function Modal({ activeModal, setActive, }) {
     const { product, basket } = useSelector(state => state)
@@ -35,7 +36,7 @@ export default function Modal({ activeModal, setActive, }) {
                     <p>${subtotal}</p>
                 </div>
                 <Link to='/basket'>
-                    <button className={s.modal_basket_btn} onClick={() => setActive(false)}>View Cart</button>
+                   <MainButton children={'view cart'}/>
                 </Link>
                 
             </div>

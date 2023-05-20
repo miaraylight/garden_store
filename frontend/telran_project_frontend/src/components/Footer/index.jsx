@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import s from './style.module.css'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify';
+import Logo from '../Logo';
+import MainButton from '../MainButton';
 
 export default function Footer() {
     const { register, handleSubmit, reset } = useForm()
@@ -30,9 +32,7 @@ export default function Footer() {
   return (
     <div className={s.container}>
         <div className={s.footer}>
-            <div className={s.footer_logo}>
-            <NavLink className={s.footer_logo_link} to='/'>eGrow <span>plants</span></NavLink>
-            </div>
+            <Logo/>
             <div className={s.footer_links}>
                 <p className={s.footer_title}>Quick Links</p>
                 <div>
@@ -65,7 +65,7 @@ export default function Footer() {
                 <p className={s.footer_title}>Subscribe to Our Newsletter</p>
                 <form className={s.subscribe_form} onSubmit={handleSubmit(onSubmitHandler)}>
                     <input type="text" placeholder='Your email adress...' {...register('email', {required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g})}/>
-                    <button>Subscribe</button>
+                    <MainButton children={'subscribe'}/>
                 </form>
             </div>
         </div>

@@ -135,22 +135,7 @@
 .form_name input{
     width: 48%;
 }
-.form_block button{
-    font-family: inherit;
-    background-color: var(--khaki);
-    color: var(--white);
-    width: 10.7rem;
-    height: 3.1rem;
-    font-size: 1rem;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1em;
-    transition: background-color .7s;
-}
-.form_block button:hover {
-    background-color: var(--lightKhaki);
-}
+
 /*************************************************/
 #map{
     max-width: var(--width);

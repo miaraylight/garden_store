@@ -63,18 +63,3 @@
     color: var(--darkGrey);
     border-bottom: 1px solid var(--lightBack); 
 }
-.basket_checkout{
-    font-family: inherit;
-    background-color: var(--khaki);
-    color: var(--white);
-    height: 3.1rem;
-    font-size: 1rem;
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1em;
-    transition: background-color .7s;
-}
-.basket_checkout:hover {
-    background-color: var(--lightKhaki);
-}

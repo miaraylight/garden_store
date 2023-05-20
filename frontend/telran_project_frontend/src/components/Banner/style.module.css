@@ -13,20 +13,7 @@
     background: var(--lightBack);
     align-items: center;
 }
-.banner button{
-    font-family: 'DM Sans',sans-serif;
-    background-color: var(--khaki);
-    color: var(--white);
-    width: 12.7rem;
-    height: 4.1rem;
-    font-size: 1.14rem;
-    border: none;
-    margin-top: 5rem;
-    margin-left: 0.625rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1em;
-}
+
 .banner h3{
     font-size: 3.375rem;
     padding: 0.625rem;

@@ -3,6 +3,7 @@ import s from './style.module.css'
 import FooterMap from '../../components/FooterMap'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify';
+import MainButton from '../../components/MainButton';
 
 
 export default function ContactPage() {
@@ -87,7 +88,7 @@ export default function ContactPage() {
           <input type="text" placeholder='Email Address' {...register('email', {required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g})}/>
           <input type="text" placeholder='Subject' {...register('subject', {required: true, maxLength: 100})}/>
           <textarea type="text" placeholder='Your message' {...register('message', {required: true})}/>
-          <button type='submit'>Submit</button>
+          <MainButton children={'submit'}/>
         </form>
       </div>
       <div id={s.map}>

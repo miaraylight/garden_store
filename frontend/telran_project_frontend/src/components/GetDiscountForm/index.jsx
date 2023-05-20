@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import React from 'react'
 import s from './style.module.css'
 import { toast } from 'react-toastify';
+import MainButton from "../MainButton";
 
 export default function GetDiscountForm() {
   const { register, handleSubmit, reset } = useForm()
@@ -39,7 +40,7 @@ export default function GetDiscountForm() {
             placeholder='+49' 
             {...register("number", {required: true, pattern: /\(?\+\(?49\)?[ ()]?([- ()]?\d[- ()]?){10}/g})}
             />
-            <button>Get a discount</button>
+            <MainButton children={'get a discount'}/>
           </form>
         </div>
         <div className={s.image_wrapper}>

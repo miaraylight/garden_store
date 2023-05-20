@@ -3,6 +3,7 @@ import s from './style.module.css'
 import { useSelector } from 'react-redux'
 import BasketItem from '../../components/BasketItem'
 import { toast } from 'react-toastify'
+import MainButton from '../../components/MainButton'
 
 export default function BasketPage() {
   const { product, basket} = useSelector(state => state)
@@ -75,7 +76,7 @@ export default function BasketPage() {
               <p>Total</p>
               <span>${total}</span>
             </div>
-            <button className={s.basket_checkout} onClick={onClickHandler}>Order</button>
+            <MainButton children={'order'} onClickHandler={onClickHandler}/>
           </div>
 
         </div>

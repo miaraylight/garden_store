@@ -1,6 +1,7 @@
 import React from 'react'
 import s from './style.module.css'
 import { Link } from 'react-router-dom'
+import MainButton from '../MainButton'
 
 export default function Banner() {
   const link = '/product/sale'
@@ -11,7 +12,8 @@ export default function Banner() {
           <h3>New Season</h3>
           <p>Unique deals & offers every single day</p>
           <Link to={link}>
-            <button>Shop now</button></Link>
+            <MainButton children={'shop now'}/>
+            </Link>
         </div>
         <div className={s.banner_img}>
           <img src={process.env.PUBLIC_URL + '/images/banner-background.png'} alt="banner-background" />
