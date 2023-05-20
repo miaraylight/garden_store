@@ -24,6 +24,12 @@
     color: var(--darkGrey);
     font-size: 15px;
 }
+.basket_items_header :first-child{
+    margin-left: 25%;
+}
+.basket_items_header :last-child{
+    margin-right: 30px;
+}
 .basket_items_header p{
     padding: 10px;
 }

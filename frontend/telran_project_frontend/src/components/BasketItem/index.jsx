@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 export default function BasketItem({id, title, price, final_price, count, image, modal}) {
     const dispatch = useDispatch()
-    const subtotal = count * price
+    const subtotal = (count * price).toFixed(2)
     return (
     <div className={s.basketItem_wrapper}>
         <Link to={`/product/item/${id}`}>

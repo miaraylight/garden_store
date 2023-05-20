@@ -1,4 +1,5 @@
 .container{
+    min-height: 100%;
     margin: 0 auto;
     background-image: url(/public/images/categories-bg.jpg);
     background-position: center center;
@@ -25,8 +26,8 @@
 .categories_wrapper{
     max-width: var(--width);
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: space-around;
+    padding: 20px 2vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3%;
 }

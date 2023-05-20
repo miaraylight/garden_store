@@ -1,13 +1,13 @@
 .container{
-    padding: 38px 46px;
     background-color: var(--lightBack);
 }
 .footer{
     max-width: var(--width);
+    height: fit-content;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding: 20px 28px;
+    padding: 20px 2vw;
 }
 .footer_title{
     font-family: DM serif Display;
@@ -77,7 +77,13 @@
 .social_links a img:hover {
     transform: scale(1.08);
 }
+.subscribe_form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .subscribe_form input{
+    width: 100%;
     padding: 10px;
     border: none;
     outline: none;
@@ -97,4 +103,20 @@
 }
 .subscribe_form button:hover {
     background-color: var(--lightKhaki);
+}
+/***********************************************/
+@media(max-width: 768px){
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer_title{
+        font-size: 19px;
+        margin-bottom: 0;
+    }
+    .subscribe_form{
+        align-items: center;
+    }
 }

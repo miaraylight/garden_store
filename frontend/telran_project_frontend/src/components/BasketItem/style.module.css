@@ -19,7 +19,7 @@
     gap: 10px;
 }
 .basketItem_image {
-    width: 30%;
+    width: 25%;
     height: 100%;
 }
 .basketItem_image img{
@@ -80,7 +80,8 @@
     color: var(--lightGrey);
 }
 .basketItem_subtotal{
-
+    width: 10%;
+    text-align: center;
 }
 .basketItem_deleteBtn{
     background: transparent;

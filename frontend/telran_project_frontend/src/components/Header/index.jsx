@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { NavLink, useLocation } from 'react-router-dom'
 import s from './style.module.css'
 import Modal from '../Modal'
+import Logo from '../Logo'
 
 export default function Header() {
   const basketCount = useSelector(state => state.basket.list.reduce((acc, {count})=> acc + count, 0))
@@ -11,7 +12,7 @@ export default function Header() {
   return (
     <div>
       <div className={s.container}>
-      <NavLink className={s.logo_link} to='/'>eGrow <span>plants</span></NavLink>
+        <Logo/>
       <div className={s.links_wrapper}>
         <NavLink className={({isActive}) => isActive ? s.active_link : s.link} to='/categories'>Catalog</NavLink>
         <NavLink className={({isActive}) => isActive ? s.active_link : s.link} to='/product/all'>Shop all</NavLink>

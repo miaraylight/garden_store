@@ -13,7 +13,8 @@ export default function BasketPage() {
   })
 
   const subtotal = data.reduce((acc, item) => acc + item.price * item.count, 0)
-  const total = data.reduce((acc, item) => acc + item.final_price * item.count, 0)
+  let total = data.reduce((acc, item) => acc + item.final_price * item.count, 0).toFixed(2)
+  
   const onClickHandler = async() => {
     try {
       const responce = await fetch('http://localhost:3333/order/send', {
@@ -43,24 +44,7 @@ export default function BasketPage() {
       );
     }
   }
-  // const onClickHandler = async() => {
-  //   try {
-  //     const responce = await fetch('http://localhost:3333/order/send', {
-  //       method: 'POST',
-  //       headers: {
-  //         Accept: data
-  //       }
-  //     })
-  //     if (responce.ok) {
-  //       const jsonResponse = await responce.json()
-  //       console.log(jsonResponse);
-  //       // toast.success('Order completed successfully!')
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //     // toast.error('Something went wrong')
-  //   }
-  // }
+
   return (
     <div className={s.container}>
       <h1 className={s.title}>Cart</h1>
