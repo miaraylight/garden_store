@@ -68,12 +68,12 @@ export default function BasketPage() {
             <p>Card totals</p>
           </div>
           <div className={s.basket_total_content}>
-            <div className={s.basket_calculation}>
-              <p>Subtotal</p>
+            <div className={s.basket_calculation_subtotal}>
+              <span>Subtotal</span>
               <span>${subtotal}</span>
             </div>
-            <div className={s.basket_calculation}>
-              <p>Total</p>
+            <div className={s.basket_calculation_total}>
+              <span>Total</span>
               <span>${total}</span>
             </div>
             <MainButton children={'order'} onClickHandler={onClickHandler}/>

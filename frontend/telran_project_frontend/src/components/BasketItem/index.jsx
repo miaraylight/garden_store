@@ -16,7 +16,6 @@ export default function BasketItem({id, title, price, final_price, count, image,
             <p className={s.basketItem_title}>{title}</p>  
         </Link>
         <div className={s.basketItem_priceBlock}>
-            <p className={s.price} style={modal ? {display: 'none'} : {display: 'flex'}}>${price}</p>
             <p className={s.final_price} >${final_price}</p>
         </div>
         <div className={s.basketItem_toolbar} style={modal ? {display: 'none'} : {display: 'flex'}}>

@@ -1,6 +1,7 @@
 .container{
     max-width: var(--width);
     margin: 0 auto;
+    padding: 20px 2vw 50px;
 }
 .title{
     font-family: DM serif Display;
@@ -9,13 +10,17 @@
     padding: 50px 0;
 }
 .basket{
-    display: flex;
-    justify-content: space-between;
+    display: grid; 
+    grid-template-columns: 60% 35%;
+    grid-auto-rows: 1fr;
+    gap: 5%;
 }
 .basket_items_block{
-    width: 65%;
+    border: 1px solid var(--lightBack);
+    
 }
 .basket_items_header{
+    height: 65px;
     background-color: var(--lightBack);
     display: flex;
     justify-content: space-between;
@@ -24,25 +29,24 @@
     color: var(--darkGrey);
     font-size: 15px;
 }
-.basket_items_header :first-child{
-    margin-left: 25%;
-}
-.basket_items_header :last-child{
-    margin-right: 30px;
-}
+
 .basket_items_header p{
     padding: 10px;
+    display: flex;
+    align-items: center;
 }
 .basket_items{
-
+    max-height: 500px;
+    overflow-y: scroll;
+    padding: 10px;
 }
 /**********************************/
 .basket_total_block{
-    width: 30%;
     border: 1px solid var(--lightBack);
-    
+    height: fit-content;
 }
 .basket_total_header{
+    height: 65px;
     background-color: var(--lightBack);
     padding: 10px;
 }
@@ -53,13 +57,53 @@
 /*******************************/
 .basket_total_content{
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
-.basket_calculation{
+.basket_calculation_subtotal,
+.basket_calculation_total{
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 20px 10px;
     font-family: inherit;
     font-size: 15px;
     color: var(--darkGrey);
     border-bottom: 1px solid var(--lightBack); 
+}
+@media (max-width: 1000px) {
+    
+}
+@media (max-width: 768px) {
+    .basket{
+        grid-template-columns: 1fr;
+
+    }
+    .basket_total_content{
+        align-items: center;
+    }
+}
+@media (max-width: 400px) {
+    .basket_total_header,
+    .basket_calculation_subtotal{
+        display: none;
+    }
+    .basket_total_content{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+    
+    .basket_calculation_total{
+        width: fit-content;
+        flex-direction: column;
+        padding: 0;
+        border: none;
+        
+    }
+    .basket_calculation_total :first-child{
+        padding: 0 0 10px 0;
+        font-weight: 700;
+    }
 }
