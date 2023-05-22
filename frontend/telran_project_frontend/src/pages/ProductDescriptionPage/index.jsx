@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import s from './style.module.css'
 import { addItemToBasket } from '../../store/slice/basketSlice'
 import { toast } from 'react-toastify';
+import MainButton from '../../components/MainButton'
 
 
 export default function ProductDescriptionPage() {
@@ -132,7 +133,7 @@ m-189 -451 c-37 -73 -71 -137 -77 -143 -5 -5 23 56 63 137 40 81 75 145 77
                                 <p>{count}</p>
                                 <button onClick={() => setCount(pre => pre + 1)}>+ </button>
                             </div>
-                            <button className={s.product_item_addBtn} onClick={onClickHandler}>Add to cart</button>
+                            <MainButton children={'add to cart'} onClickHandler={onClickHandler}>Add to cart</MainButton>
                             
                         </div>
                         <div className={s.product_item_payment}>
