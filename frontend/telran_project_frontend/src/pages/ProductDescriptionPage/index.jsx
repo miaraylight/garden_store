@@ -22,6 +22,7 @@ export default function ProductDescriptionPage() {
         const data = { product_id: id, product_count: count }
         dispatch(addItemToBasket(data))
         toast.success('Added to cart')
+        setCount(1)
     }
 
     const onMouseMoveHandler = ({ nativeEvent }) => {

@@ -51,17 +51,23 @@ export default function BasketPage() {
       <h1 className={s.title}>Cart</h1>
       <div className={s.basket}>
         <div className={s.basket_items_block}>
-          <div className={s.basket_items_header}>
-            <p>Product</p>
-            <p>Price</p>
-            <p>Quantity</p>
-            <p>Subtotal</p>
-          </div>
-          <div className={s.basket_items}>
-            {
-              data.map(item => <BasketItem key={item.id} {...item}/>)
-            }
-          </div>
+          <table className={s.table}>
+            <thead>
+              <tr>
+                <th>Thumbnail</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th></th>
+              </tr>  
+            </thead>
+            <tbody>
+              {
+                data.map(item => <BasketItem key={item.id} {...item} />)
+              }
+            </tbody>
+          </table>
         </div>
         <div className={s.basket_total_block}>
           <div className={s.basket_total_header}>
@@ -78,7 +84,6 @@ export default function BasketPage() {
             </div>
             <MainButton children={'order'} onClickHandler={onClickHandler}/>
           </div>
-
         </div>
       </div>
     </div>

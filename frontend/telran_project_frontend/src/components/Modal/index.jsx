@@ -27,9 +27,13 @@ export default function Modal({ activeModal, setActive, }) {
                     <button onClick={() => setActive(false)}>&#10005;</button>
                 </div>
                 <div className={s.modal_basket_items}>
-                    {
-                        data.map(item => <BasketItem key={item.id} {...item} modal={true} />)
-                    }
+                    <table>
+                        <tbody>
+                         {
+                            data.map(item => <BasketItem key={item.id} {...item} modal={true} />)
+                         }
+                        </tbody>
+                    </table>
                 </div>
                 <div className={s.modal_basket_total}>
                     <p>Subtotal</p>
