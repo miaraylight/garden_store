@@ -38,10 +38,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 15%;
+    height: fit-content;
     display: flex;
     align-items: center;
-    padding: 0 10px;
+    padding: 10px;
     z-index: 4;
 }
 .card_toolbar{
@@ -132,5 +132,23 @@
 .price{
     text-decoration: line-through;
     color: var(--lightGrey);    
+}
+
+@media (max-width: 400px) {
+    .product_card {
+        aspect-ratio: 0;
+    }
+    .product_card a{
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-auto-rows: 1fr;
+    }
+    .card_content_block{
+        height: 100%;
+        justify-content: start;
+    }
+    .card_price_block{
+        margin-top: 2%;
+    }
 }
 
