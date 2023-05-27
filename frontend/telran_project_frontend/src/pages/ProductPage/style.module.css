@@ -16,3 +16,8 @@
     gap: 10px;
     
 }
+@media (max-width: 768px) {
+    .products_wrapper{
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}

@@ -81,9 +81,19 @@ export default function ProductItem({
           <div className={s.card_price_block}>
             <p className={s.price}>${price}</p>
             <p className={s.dicount_price}>${discont_price}</p>
+           
           </div>
         </div>
       </Link>
+      <div
+              className={s.mobile_basket_btn}
+              onClick={onClick}
+            >
+              <img
+                src={process.env.PUBLIC_URL + "/images/basket-icon.png"}
+                alt="basket-icon"
+              />
+            </div>
     </div>
 
   );
