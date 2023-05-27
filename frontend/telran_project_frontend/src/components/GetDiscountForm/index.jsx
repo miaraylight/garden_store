@@ -35,6 +35,7 @@ export default function GetDiscountForm() {
       <div className={s.content_wrapper}>
         <div className={s.form_wrapper}>
           <h3>5% off on the first order</h3>
+          <p>Receive an irresistible discount by entering your phone number into our form!</p>
           <form className={s.discount_form} onSubmit={handleSubmit(onSubmitHandler)}>
             <input 
             placeholder='+49' 
