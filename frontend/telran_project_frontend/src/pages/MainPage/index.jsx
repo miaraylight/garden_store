@@ -17,7 +17,7 @@ export default function MainPage() {
       <Banner/>
       <div className={s.main_element}>
         <Link to={'/categories'}>Categories</Link>
-        <h3>Some header text</h3>
+        <h3>Explore our categories</h3>
         <div className={s.categories_container}>
           {
             categories.map(item => <CategoryItem key={item.id} {...item}/>)
@@ -27,7 +27,7 @@ export default function MainPage() {
       <GetDiscountForm/>
       <div className={s.main_element}>
         <Link to={'/product/sale'}>Sale</Link>
-        <h3>Some header text</h3>
+        <h3>Most popular plants</h3>
         <div className={s.sales_container}>
           {
             productsOnSale.map(item => <ProductItem key={item.id} {...item}/>)
