@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import MainButton from '../MainButton'
 
-export default function Modal({ activeModal, setActive, }) {
+export default function Modal({ activeModal, setActive, list}) {
     const { product, basket } = useSelector(state => state)
 
     const data = basket.list.map(item => {

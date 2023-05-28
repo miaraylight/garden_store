@@ -17,21 +17,25 @@
 .active_link{
     border-bottom: 1px solid var(--khaki);
 }
-.links_wrapper {
+.main_links,
+.secondary_links {
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: end;
 }
-.links_wrapper a{
+.main_links a,
+.secondary_links a{
     color: var(--black);
     white-space: nowrap;
     transition: color .5s, border-bottom-color .5s;
 }
-.links_wrapper a:not(:last-child){
+.main_links a:not(:last-child),
+.secondary_links a:not(:last-child){
     margin-right: 50px;  
 }
-.links_wrapper a:hover{
+.main_links a:hover,
+.secondary_links a:hover{
     border-bottom-color: var(--lightKhaki);
     color: var(--lightKhaki)
 }
@@ -65,6 +69,19 @@
     width: 25px;
     height: 25px;
 }
+.burger_btn {
+    width: fit-content;
+    display: none;
+    background: white;
+    border: none;
+}
+.burger_btn span {
+    color: var(--khaki)
+}
+.burger_btn:focus{
+    background: transparent;
+}
+
 
 @media (max-width: 850px) {
     .links_wrapper a:not(:last-child){
@@ -73,11 +90,19 @@
 }
 @media(max-width: 768px){
     .container{
-        padding: 20px 4vw;
-        grid-template-columns: repeat(2, 50%);
+        display: flex;
+        justify-content: space-between;
     }
-    .links_wrapper{
+    .main_links{
         display: none;
+    }
+    .secondary_links :not(:last-child) {
+        display: none;
+    }
+    .burger_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
 }

@@ -7,19 +7,30 @@ import Logo from '../Logo'
 
 export default function Header() {
   const basketCount = useSelector(state => state.basket.list.reduce((acc, {count})=> acc + count, 0))
-  const { pathname }= useLocation()
+  const { pathname } = useLocation()
   const [modalActive, setModaleActive] = useState(false)
+  const sideMenuData = [
+    {title: "catalog", to: '/categories', icon: 'layers'},
+    {title: "shop", to: '/product/all', icon: 'local_mall'},
+    {title: "sale", to: '/product/sale', icon: 'stars'},
+    {title: "home", to: '/', icon: 'home'},
+    {title: "contact", to: '/contact', icon: 'location_on'},
+    {title: "cart", to: '/basket', icon: 'shopping_cart'},
+  ]
   return (
     <div>
       <div className={s.container}>
+        <button className={s.burger_btn}>
+        <span class="material-icons">dehaze</span>
+        </button>
         <Logo/>
-      <div className={s.links_wrapper}>
+      <div className={s.main_links}>
         <NavLink className={({isActive}) => isActive ? s.active_link : s.link} to='/categories'>Catalog</NavLink>
         <NavLink className={({isActive}) => isActive ? s.active_link : s.link} to='/product/all'>Shop all</NavLink>
         <NavLink className={({isActive}) => isActive ? s.active_link : s.link} to='/product/sale'>On sale</NavLink>
       </div>
 
-      <div className={s.links_wrapper}>
+      <div className={s.secondary_links}>
         <NavLink className={({isActive}) => isActive ? s.active_link : s.link} to='/'>Home</NavLink>
         <NavLink className={({isActive}) => isActive ? s.active_link : s.link} to='/contact'>Contact</NavLink>
         <button 
@@ -33,7 +44,7 @@ export default function Header() {
       
     </div>
     <div style={pathname === '/basket' ? {display: 'none'} : {display: 'block'}}>
-      <Modal activeModal={modalActive} setActive={setModaleActive}/>
+      <Modal activeModal={modalActive} setActive={setModaleActive} list={sideMenuData}/>
     </div>
     
     </div>
