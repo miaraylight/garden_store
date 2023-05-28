@@ -6,9 +6,13 @@ import Modal from '../Modal'
 import Logo from '../Logo'
 
 export default function Header() {
-  const basketCount = useSelector(state => state.basket.list.reduce((acc, {count})=> acc + count, 0))
-  const { pathname } = useLocation()
-  const [modalActive, setModaleActive] = useState(false)
+  const { product, basket } = useSelector(state => state)
+  const basketCount = basket.list.reduce((acc, {count})=> acc + count, 0)
+  
+  const data = basket.list.map(item => {
+    const target = product.list.find(({ id }) => item.id === id)
+    return { ...target, ...item }
+  })
   const sideMenuData = [
     {title: "catalog", to: '/categories', icon: 'layers'},
     {title: "shop", to: '/product/all', icon: 'local_mall'},
@@ -17,11 +21,16 @@ export default function Header() {
     {title: "contact", to: '/contact', icon: 'location_on'},
     {title: "cart", to: '/basket', icon: 'shopping_cart'},
   ]
+  const subtotal = data.reduce((acc, item) => acc + item.price * item.count, 0)
+  
+  const { pathname } = useLocation()
+  const [modalActive, setModaleActive] = useState([false])
+  
   return (
     <div>
       <div className={s.container}>
-        <button className={s.burger_btn}>
-        <span class="material-icons">dehaze</span>
+        <button className={s.burger_btn} onClick={() => {setModaleActive(['nav', true])}}>
+        <span className="material-icons">dehaze</span>
         </button>
         <Logo/>
       <div className={s.main_links}>
@@ -36,15 +45,21 @@ export default function Header() {
         <button 
         data-count={basketCount === 0 ? null : basketCount} 
         className={s.link_basket} 
-        onClick={() => setModaleActive(true)}
+        onClick={() => {setModaleActive(['basket', true])}}
         >
           <img src={process.env.PUBLIC_URL + '/images/basket-icon.png'} alt="basket-icon" /> 
         </button>
       </div>
       
     </div>
-    <div style={pathname === '/basket' ? {display: 'none'} : {display: 'block'}}>
-      <Modal activeModal={modalActive} setActive={setModaleActive} list={sideMenuData}/>
+    <div>
+      <Modal 
+        activeModal={modalActive} 
+        setActive={setModaleActive} 
+        list={sideMenuData}
+        data={data}
+        subtotal={subtotal}
+        />
     </div>
     
     </div>

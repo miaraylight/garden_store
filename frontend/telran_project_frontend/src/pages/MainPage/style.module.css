@@ -35,7 +35,14 @@
     column-gap: 1rem;
     row-gap: 0;
 }
-@media (max-width: 798px) {
+@media (max-width: 768px) {
+    .categories_container,
+    .sales_container {
+        grid-template-rows: 50% 50%;
+        row-gap: 1rem;
+    }
+}
+@media (max-width: 400px) {
     .categories_container,
     .sales_container {
         grid-template-rows: 30% 30% 30%;
