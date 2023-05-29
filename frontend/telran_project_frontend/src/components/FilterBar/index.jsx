@@ -5,10 +5,11 @@ import './sliderStyles.css'
 import { useDispatch } from 'react-redux'
 import { filterByPriceRange, sortByPrice } from '../../store/slice/productSlice'
 
-export default function FilterBar({minValue, maxValue, checkboxVisibility, checkboxValue}) {
+export default function FilterBar({minValue, maxValue, checkboxVisibility, checkboxValue, setView}) {
   const dispatch = useDispatch()
   minValue = isNaN(minValue) ? 0 :  minValue;
   maxValue = isNaN(maxValue ) ? 0 :  maxValue ;
+  
   return (
     <div className={s.container}>
           <div className={s.toolbar}>
@@ -54,10 +55,10 @@ export default function FilterBar({minValue, maxValue, checkboxVisibility, check
                 <option value="lowToHigh">Sort by price: low to high</option>
                 <option value="highToLow">Sort by price: high to low</option>
               </select>
-              <button className={s.grid_btn}>
+              <button className={s.grid_btn} onClick={()=>setView(true)}>
                 <img src={process.env.PUBLIC_URL + '/images/grid-view.png'} alt="grid-view-icon" />
               </button>
-              <button className={s.list_btn}>
+              <button className={s.list_btn} onClick={()=>setView(false)}>
                 <img src={process.env.PUBLIC_URL + '/images/list-view.png'} alt="list-view-icon" />
               </button>
               

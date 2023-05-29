@@ -30,7 +30,7 @@ export default function MainPage() {
         <h3>Most popular plants</h3>
         <div className={s.sales_container}>
           {
-            productsOnSale.map(item => <ProductItem key={item.id} {...item}/>)
+            productsOnSale.map(item => <ProductItem key={item.id} {...item} view={true}/>)
           }
         </div>
       </div>

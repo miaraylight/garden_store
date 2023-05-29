@@ -3,7 +3,7 @@ import s from "./style.module.css";
 import { Link } from "react-router-dom";
 import { addItemToBasket } from "../../store/slice/basketSlice";
 import { useDispatch } from "react-redux";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 export default function ProductItem({
   id,
@@ -11,15 +11,16 @@ export default function ProductItem({
   price,
   discont_price,
   image,
+  view
 }) {
   const link = `/product/item/${id}`;
   const [toggleBasketBtn, setToggleBasketBtn] = useState({ display: "none" });
   const [togglePopUp, setTogglePopUp] = useState({ display: "none" });
   const dispatch = useDispatch();
   const onClick = () => {
-    dispatch(addItemToBasket({ product_id: id }))
-    toast.success('Added to cart')
-  }
+    dispatch(addItemToBasket({ product_id: id }));
+    toast.success("Added to cart");
+  };
 
   return (
     <div
@@ -35,9 +36,7 @@ export default function ProductItem({
         <span
           className={s.discount_percentage}
           style={
-            discont_price === null
-              ? { display: "none" }
-              : { display: "block" }
+            discont_price === null ? { display: "none" } : { display: "block" }
           }
         >
           -{(((price - discont_price) * 100) / price).toFixed(1)}%
@@ -45,7 +44,6 @@ export default function ProductItem({
         <div className={s.card_toolbar}>
           <button
             className={s.basket}
-
             onMouseEnter={(e) => {
               setTogglePopUp({ display: "flex" });
             }}
@@ -69,7 +67,7 @@ export default function ProductItem({
           </button>
         </div>
       </div>
-      <Link to={link}>
+      <Link to={link} className={s.link} style={!view ? {gridTemplateColumns: '30% 70%'} : {gridTemplateColumns: '100%'}}>
         <div className={s.card_img_block}>
           <div className={s.card_img}>
             <img src={`http://localhost:3333/${image}`} alt="product" />
@@ -81,20 +79,15 @@ export default function ProductItem({
           <div className={s.card_price_block}>
             <p className={s.price}>${price}</p>
             <p className={s.dicount_price}>${discont_price}</p>
-           
           </div>
         </div>
       </Link>
-      <div
-              className={s.mobile_basket_btn}
-              onClick={onClick}
-            >
-              <img
-                src={process.env.PUBLIC_URL + "/images/basket-icon.png"}
-                alt="basket-icon"
-              />
-            </div>
+      <div className={s.mobile_basket_btn} onClick={onClick}>
+        <img
+          src={process.env.PUBLIC_URL + "/images/basket-icon.png"}
+          alt="basket-icon"
+        />
+      </div>
     </div>
-
   );
 }

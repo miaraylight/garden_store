@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation  } from 'react-router-dom'
 import ProductItem from '../../components/ProductItem';
 import s from './style.module.css'
 import FilterBar from '../../components/FilterBar';
@@ -13,6 +13,12 @@ export default function ProductPage() {
   const dispatch = useDispatch()
 
   useEffect(() => { dispatch(resetFilters())}, [])
+  const { pathname } = useLocation()
+  if (pathname !== '/') {
+    
+  }
+  const [ view, setView ] = useState(true)
+  console.log(view)
   
   const status = useSelector(state => state.product.status)
 
@@ -53,12 +59,13 @@ export default function ProductPage() {
           maxValue={max}
           checkboxVisibility={header} 
           checkboxValue={setDiscounted}
+          setView={setView}
         />
-        <div className={s.products_wrapper}>
+        <div className={s.products_wrapper_grid} style={view ? {gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))'} : {gridTemplateColumns: '1fr'}}>
           {
             products
               .filter(({show}) => show)
-              .map(item => <ProductItem key={item.id} {...item}/>)
+              .map(item => <ProductItem key={item.id} {...item} view={view}/>)
           }
         </div>
         
