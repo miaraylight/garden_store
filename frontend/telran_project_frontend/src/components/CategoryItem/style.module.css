@@ -51,6 +51,7 @@
 @media (max-width: 400px) {
     .category_card {
         height: 110px;
+        padding: 5px 0;
     }
     .card_title{
         top: 50%;

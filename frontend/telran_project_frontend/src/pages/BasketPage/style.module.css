@@ -82,7 +82,7 @@
     }
     .table td,
     .table th{
-        padding: 12px;
+        /* padding: 12px; */
         text-align: center;
     }
     .table th{

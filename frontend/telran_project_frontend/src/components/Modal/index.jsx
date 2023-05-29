@@ -46,8 +46,8 @@ export default function Modal({ activeModal, setActive, list, data, subtotal }) 
                 style={activeModal[0] === 'basket' ? {display: 'block'} : {display: 'none'} }
                 >
                     <div className={s.modal_basket_total}>
-                        <p>{subtotal}</p>
-                        <p>$</p>
+                        <p>Subtotal:</p>
+                        <p>{subtotal}$</p>
                     </div>
                     <Link to='/basket'>
                     <MainButton children={'view cart'}/>

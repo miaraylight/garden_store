@@ -67,7 +67,7 @@ export default function ProductItem({
           </button>
         </div>
       </div>
-      <Link to={link} className={s.link} style={!view ? {gridTemplateColumns: '30% 70%'} : {gridTemplateColumns: '100%'}}>
+      <Link to={link} className={view ? s.link_grid: s.link_list}>
         <div className={s.card_img_block}>
           <div className={s.card_img}>
             <img src={`http://localhost:3333/${image}`} alt="product" />

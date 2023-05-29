@@ -141,26 +141,21 @@
     margin: 3rem auto;
 }
 /*************************************************/
-@media(max-width: 1000px){
+
+@media(max-width: 768px){
     .form_wrapper {
         grid-template-columns: 1fr;
         grid-auto-rows: 1fr;
+        text-align: center;
+        padding: 20px 4vw;
     }
     
     .form_block{
         grid-column-start: 1;
         grid-row-start: 1;
-    }
-}
-@media(max-width: 768px){
-    .form_wrapper {
-        text-align: center;
-        padding: 20px 4vw;
-    }
-    .form_block{
         align-items: center;
     }
-   
+    
     .form_name{
         gap: 20px;
         flex-direction: column;

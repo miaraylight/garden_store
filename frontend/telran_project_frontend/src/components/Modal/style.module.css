@@ -32,7 +32,7 @@
     padding: 20px;
     border-radius: 12px;
     background-color: #fff;
-    width: 30vw;
+    width: 40vw;
     height: 100vh;
     transform: translateY(-100%);
     transition: 0.4s all;
@@ -42,7 +42,7 @@
 .modal_content_active{
     padding: 20px;
     background-color: #fff;
-    width: 30vw;
+    width: 40vw;
     height: 100vh;
     transition: transform 0.4s ease-in-out;
     transform: translateY(0%);
@@ -54,7 +54,8 @@
 .modal_header{
     display: flex;
     align-items: center;
-    padding: 10px 0;
+    padding: 10px 10px 30px 10px;
+    border-bottom: 1px solid var(--white);
 }
 .modal_header h1{
     font-family: DM serif Display;
@@ -122,9 +123,13 @@
     }
     .modal_items table{
         width: 100%;
-        
-
     }
     
     
+}
+@media (max-width: 769px) {
+    .modal_content,
+    .modal_content_active{
+        width: 100vw;   
+    }
 }
