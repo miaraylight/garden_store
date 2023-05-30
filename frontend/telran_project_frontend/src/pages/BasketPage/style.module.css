@@ -1,25 +1,28 @@
-.container{
+.container {
     max-width: var(--width);
     margin: 0 auto;
     padding: 20px 2vw 50px;
 }
-.title{
+
+.title {
     font-family: DM serif Display;
     text-align: center;
-    font-size: 50px;
+    font-size: calc(1rem + 3vw);
     padding: 50px 0;
 }
-.basket{
-    display: grid; 
+
+.basket {
+    display: grid;
     grid-template-columns: 62% 35%;
     grid-auto-rows: 1fr;
     gap: 3%;
 }
-.basket_items_block{
+
+.basket_items_block {
     border: 1px solid var(--lightBack);
-    
 }
-.basket_items_header{
+
+.basket_items_header {
     height: 65px;
     background-color: var(--lightBack);
     display: flex;
@@ -30,38 +33,44 @@
     font-size: 15px;
 }
 
-.basket_items_header p{
+.basket_items_header p {
     padding: 10px;
     display: flex;
     align-items: center;
 }
-.basket_items{
+
+.basket_items {
     max-height: 500px;
     overflow-y: scroll;
     padding: 10px;
 }
+
 /**********************************/
-.basket_total_block{
+.basket_total_block {
     border: 1px solid var(--lightBack);
     height: fit-content;
 }
-.basket_total_header{
+
+.basket_total_header {
     height: 65px;
     background-color: var(--lightBack);
     padding: 10px;
 }
-.basket_total_header p{
+
+.basket_total_header p {
     font-family: DM serif Display;
     padding: 10px;
 }
+
 /*******************************/
-.basket_total_content{
+.basket_total_content {
     padding: 10px;
     display: flex;
     flex-direction: column;
 }
+
 .basket_calculation_subtotal,
-.basket_calculation_total{
+.basket_calculation_total {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -69,91 +78,108 @@
     font-family: inherit;
     font-size: 15px;
     color: var(--lightGrey);
-    border-bottom: 1px solid var(--lightBack); 
+    border-bottom: 1px solid var(--lightBack);
 }
+
 .basket_calculation_subtotal :last-child,
 .basket_calculation_total :last-child {
     color: var(--darkGrey);
 }
 
-.table{
-        width: 100%;
-        border-collapse: collapse;
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table td,
+.table th {
+    text-align: center;
+}
+
+.table th {
+    background-color: var(--lightBack);
+    height: 65px;
+    color: var(--lightGrey);
+}
+
+.table th:first-child {
+    color: transparent;
+}
+
+@media (max-width: 900px) {
+    .basket {
+        display: grid;
+        grid-template-columns: 71% 27%;
+        grid-auto-rows: 1fr;
+        gap: 2%;
     }
+}
+
+@media (max-width: 769px) {
+    .basket {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 100%;
+        gap: 2%;
+    }
+
     .table td,
-    .table th{
-        /* padding: 12px; */
-        text-align: center;
-    }
-    .table th{
-        background-color: var(--lightBack);
-        height: 65px;
-        color: var(--lightGrey);
-    }
-    .table th:first-child{
-        color: transparent;
-    }
-    @media (max-width: 900px) {
-        .basket{
-            display: grid; 
-            grid-template-columns: 71% 27%;
-            grid-auto-rows: 1fr;
-            gap: 2%;
-        }
-    }
-    @media (max-width: 769px) {
-        .basket{
-            display: grid; 
-            grid-template-columns: 1fr;
-            grid-auto-rows: 1fr;
-            gap: 2%;
-        }
-        .table td,
-    .table th{
+    .table th {
         text-align: right;
     }
-        .table thead{
-            display: none;
-        }
-        .table, table tbody, .table tr, .table td{
-            display: block;
-            width: 100%;
-        }
-        .table tr {
-            padding-left: 40%;
-            position: relative;
-        }
-        .table td::before{
-            content: attr(data-label);
-            position: absolute;
-            left: 0;
-            width: 35%;
-            padding-left: 15px;
-            text-align: left;
-            color: var(--lightGrey);
-        }
-    }
-    @media (max-width: 400px) {
-        .basket_total_header,
-    .basket_calculation_subtotal{
+
+    .table thead {
         display: none;
     }
-    .basket_total_content{
+
+    .table,
+    table tbody,
+    .table tr,
+    .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        padding-left: 40%;
+        position: relative;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 35%;
+        padding-left: 15px;
+        text-align: left;
+        color: var(--lightGrey);
+    }
+}
+
+@media (max-width: 400px) {
+
+    .basket_total_header,
+    .basket_calculation_subtotal {
+        display: none;
+    }
+
+    .basket_total_content {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding-bottom: 20px;
     }
-    
-    .basket_calculation_total{
+
+    .basket_calculation_total {
         width: fit-content;
         flex-direction: column;
         padding: 0;
         border: none;
-        
+
     }
-    .basket_calculation_total :first-child{
+
+    .basket_calculation_total :first-child {
         padding: 0 0 10px 0;
         font-weight: 700;
-    } 
     }
+}

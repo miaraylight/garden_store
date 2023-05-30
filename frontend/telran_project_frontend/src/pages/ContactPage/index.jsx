@@ -1,34 +1,32 @@
-import React from 'react'
-import s from './style.module.css'
-import FooterMap from '../../components/FooterMap'
-import { useForm } from 'react-hook-form'
-import { toast } from 'react-toastify';
-import MainButton from '../../components/MainButton';
-
+import React from "react";
+import s from "./style.module.css";
+import FooterMap from "../../components/FooterMap";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import MainButton from "../../components/MainButton";
 
 export default function ContactPage() {
-  const { register, handleSubmit, reset } = useForm()
-  const onSubmitHandler = async(data) => {
-    try{
-      const response = await fetch('http://localhost:3333/feedback/send', {
-        method: 'POST',
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmitHandler = async (data) => {
+    try {
+      const response = await fetch("http://localhost:3333/feedback/send", {
+        method: "POST",
         headers: {
-          Accept: data
-        }
-      })
+          Accept: data,
+        },
+      });
       if (response.ok) {
-        const jsonResponse = await response.json()
+        const jsonResponse = await response.json();
         console.log(jsonResponse.message);
-        toast('Done!')
+        toast("Done!");
       }
-    }
-    catch(error){
+    } catch (error) {
       console.log(error);
-      toast.error('Something went wrong')
+      toast.error("Something went wrong");
     }
-    
-    reset()
-  }
+
+    reset();
+  };
   return (
     <div className={s.container}>
       <div className={s.title_wrapper}>
@@ -40,21 +38,30 @@ export default function ContactPage() {
           <div className={s.contact_info}>
             <div>
               <div className={s.contacts}>
-                <img src={process.env.PUBLIC_URL + '/images/geo-icon.png'} alt="" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/geo-icon.png"}
+                  alt=""
+                />
                 <span>visit us</span>
               </div>
               <p>Linkstraße 2, 8 OG, 10785, Berlin, Deutschland</p>
             </div>
             <div>
               <div className={s.contacts}>
-                <img src={process.env.PUBLIC_URL + '/images/phone-icon.png'} alt="" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/phone-icon.png"}
+                  alt=""
+                />
                 <span>call us</span>
               </div>
               <p>+48-576-152794</p>
             </div>
             <div>
               <div className={s.contacts}>
-                <img src={process.env.PUBLIC_URL + '/images/email-icon.png'} alt="" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/email-icon.png"}
+                  alt=""
+                />
                 <span>email us</span>
               </div>
               <p>miaraylight@gmail.com</p>
@@ -64,36 +71,73 @@ export default function ContactPage() {
             <h5>Follow us</h5>
             <div className={s.social_links}>
               <a href="https://www.instagram.com/" className={s.contact_media}>
-                <img src={process.env.PUBLIC_URL + '/images/instagram-icon.png'} alt="instagram-icon" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/instagram-icon.png"}
+                  alt="instagram-icon"
+                />
               </a>
-              <a href="https://www.linkedin.com/in/malika-taitelieva-88b333273/" className={s.contact_media}>
-                <img src={process.env.PUBLIC_URL + '/images/ln-icon.png'} alt="ln-icon" />
+              <a
+                href="https://www.linkedin.com/in/malika-taitelieva-88b333273/"
+                className={s.contact_media}
+              >
+                <img
+                  src={process.env.PUBLIC_URL + "/images/ln-icon.png"}
+                  alt="ln-icon"
+                />
               </a>
               <a href="https://www.youtube.com/" className={s.contact_media}>
-                <img src={process.env.PUBLIC_URL + '/images/youtube-icon.png'} alt="youtube-icon" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/youtube-icon.png"}
+                  alt="youtube-icon"
+                />
               </a>
               <a href="https://t.me/sirokko01" className={s.contact_media}>
-                <img src={process.env.PUBLIC_URL + '/images/telegram-icon.png'} alt="telegram-icon" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/telegram-icon.png"}
+                  alt="telegram-icon"
+                />
               </a>
             </div>
-
           </div>
         </div>
         <form className={s.form_block} onSubmit={handleSubmit(onSubmitHandler)}>
           <h4>Drop us a line or two</h4>
           <div className={s.form_name}>
-            <input type="text" placeholder='Name' {...register('name', {required: true})}/>
-            <input type="text" placeholder='Last Name' {...register('lastName', {required: true})}/>
+            <input
+              type="text"
+              placeholder="Name"
+              {...register("name", { required: true })}
+            />
+            <input
+              type="text"
+              placeholder="Last Name"
+              {...register("lastName", { required: true })}
+            />
           </div>
-          <input type="text" placeholder='Email Address' {...register('email', {required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g})}/>
-          <input type="text" placeholder='Subject' {...register('subject', {required: true, maxLength: 100})}/>
-          <textarea type="text" placeholder='Your message' {...register('message', {required: true})}/>
-          <MainButton children={'submit'}/>
+          <input
+            type="text"
+            placeholder="Email Address"
+            {...register("email", {
+              required: true,
+              pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+            })}
+          />
+          <input
+            type="text"
+            placeholder="Subject"
+            {...register("subject", { required: true, maxLength: 100 })}
+          />
+          <textarea
+            type="text"
+            placeholder="Your message"
+            {...register("message", { required: true })}
+          />
+          <MainButton children={"submit"} />
         </form>
       </div>
       <div id={s.map}>
-          <FooterMap/>
-        </div>
+        <FooterMap />
+      </div>
     </div>
-  )
+  );
 }

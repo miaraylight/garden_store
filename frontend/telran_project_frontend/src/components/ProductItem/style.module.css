@@ -1,16 +1,17 @@
-.product_card{
+.product_card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: box-shadow .7s;
     position: relative;
-    border: 1px solid black;
 }
-.link_grid{
+
+.link_grid {
     display: grid;
     grid-template-columns: 100%;
 }
-.link_list{
+
+.link_list {
     display: grid;
     grid-template-columns: 30% 70%;
 }
@@ -19,7 +20,7 @@
     box-shadow: 0px 4px 17px 0px rgba(34, 60, 80, 0.357);
 }
 
-.card_img_block{
+.card_img_block {
     aspect-ratio: 1;
     display: flex;
     align-items: center;
@@ -31,15 +32,18 @@
     width: 100%;
     height: 100%;
 }
-.card_img img{
+
+.card_img img {
     width: 100%;
     height: 100%;
 }
-.product_card a{
+
+.product_card a {
     height: 100%;
 }
+
 /**************************/
-.card_top{
+.card_top {
     position: absolute;
     top: 0;
     left: 0;
@@ -50,13 +54,14 @@
     padding: 10px;
     z-index: 4;
 }
-.card_toolbar{
+
+.card_toolbar {
     margin-left: auto;
     display: flex;
     align-items: center;
 }
 
-.discount_percentage{
+.discount_percentage {
     background: white;
     box-shadow: 0px 3px 15px -3px rgba(34, 60, 80, 0.277);
     padding: 6px;
@@ -65,15 +70,17 @@
     font-family: inherit;
     color: var(--grey);
 }
+
 .basket {
     display: flex;
     align-items: center;
     background: transparent;
     gap: 5px;
     border: none;
+    cursor: pointer;
 }
 
-.basket_pop_up{
+.basket_pop_up {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,6 +90,7 @@
     font-family: inherit;
     border-radius: 3px;
 }
+
 .basket_btn {
     width: 33px;
     height: 33px;
@@ -96,36 +104,40 @@
     margin-left: auto;
     transition: all .7s;
 }
-.basket_btn img{
+
+.basket_btn img {
     width: 60%;
     height: 60%;
 }
-.basket_btn:hover{
+
+.basket_btn:hover {
     transform: scale(1.05);
     background: white;
 }
 
 /**********************************/
-.card_content_block{
+.card_content_block {
     height: 100%;
     padding: 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.card_title{
+
+.card_title {
     width: 100%;
     height: 54px;
-    font-size: 20px;
+    font-size: calc(1rem + .2vw);
     font-family: DM serif Display;
     color: var(--black);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;  
+    text-overflow: ellipsis;
 }
-.card_price_block{
+
+.card_price_block {
     margin-top: auto;
     display: flex;
     align-items: center;
@@ -136,20 +148,27 @@
     font-weight: 700;
     line-height: 1.3;
 }
-.price{
+
+.card_price_block :first-child{
+    
+}
+.price {
     text-decoration: line-through;
-    color: var(--lightGrey);    
+    color: var(--lightGrey);
 }
-.mobile_basket_btn{
-   display: none;     
+
+.mobile_basket_btn {
+    display: none;
 }
+
 @media (max-width: 768px) {
-    .product_card{
+    .product_card {
         grid-column: auto / span 1;
         grid-row: auto / span 1;
     }
-    .mobile_basket_btn{
-        
+
+    .mobile_basket_btn {
+
         width: 35px;
         height: 35px;
         padding: 2px;
@@ -163,35 +182,40 @@
         margin: -35px 5px 5px auto;
         transition: all .7s;
     }
-    .mobile_basket_btn img{
+
+    .mobile_basket_btn img {
         width: 60%;
         height: 60%;
     }
 }
+
 @media (max-width: 400px) {
     .product_card {
-        aspect-ratio: 0;
-        height: 100px;
+        height: 110px;
     }
-    .product_card a{
+
+    .product_card a {
         display: grid;
         grid-template-columns: 30% 70%;
         grid-auto-rows: 1fr;
         align-items: center;
     }
-    .card_top{
+
+    .card_top {
         display: flex;
         padding: 4px;
     }
-    .basket_btn{
+
+    .basket_btn {
         opacity: 0;
     }
-    .card_content_block{
+
+    .card_content_block {
         height: 100%;
         justify-content: space-between;
     }
-    .card_price_block{
+
+    .card_price_block {
         margin-top: 2%;
     }
 }
-

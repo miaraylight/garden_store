@@ -1,50 +1,48 @@
-import React from 'react'
-import s from './style.module.css'
-import { useSelector } from 'react-redux'
-import BasketItem from '../../components/BasketItem'
-import { toast } from 'react-toastify'
-import MainButton from '../../components/MainButton'
+import React from "react";
+import s from "./style.module.css";
+import { useSelector } from "react-redux";
+import BasketItem from "../../components/BasketItem";
+import { toast } from "react-toastify";
+import MainButton from "../../components/MainButton";
 
 export default function BasketPage() {
-  const { product, basket} = useSelector(state => state)
+  const { product, basket } = useSelector((state) => state);
 
-  const data = basket.list.map(item => {
-    const target = product.list.find(({id}) => item.id === id)
-    return {...target, ...item}
-  })
+  const data = basket.list.map((item) => {
+    const target = product.list.find(({ id }) => item.id === id);
+    return { ...target, ...item };
+  });
 
-  const subtotal = data.reduce((acc, item) => acc + item.price * item.count, 0)
-  let total = data.reduce((acc, item) => acc + item.final_price * item.count, 0).toFixed(2)
-  
-  const onClickHandler = async() => {
+  const subtotal = data
+    .reduce((acc, item) => acc + item.price * item.count, 0)
+    .toFixed(2);
+  let total = data
+    .reduce((acc, item) => acc + item.final_price * item.count, 0)
+    .toFixed(2);
+
+  const onClickHandler = async () => {
     try {
-      const responce = await fetch('http://localhost:3333/order/send', {
-        method: 'POST',
+      const responce = await fetch("http://localhost:3333/order/send", {
+        method: "POST",
         headers: {
-          Accept: data
-        }
-      })
+          Accept: data,
+        },
+      });
       if (responce.ok) {
-        const jsonResponse = await responce.json()
+        const jsonResponse = await responce.json();
         console.log(jsonResponse);
-        toast.promise(
-          () => Promise.resolve(jsonResponse),
-          {
-            pending: 'Order is processing...',
-            success: 'Order completed successfully!',
-          }
-        );
+        toast.promise(() => Promise.resolve(jsonResponse), {
+          pending: "Order is processing...",
+          success: "Order completed successfully!",
+        });
       }
     } catch (error) {
       console.log(error);
-      toast.promise(
-        () => Promise.reject(error),
-        {
-          error: 'Something went wrong'
-        }
-      );
+      toast.promise(() => Promise.reject(error), {
+        error: "Something went wrong",
+      });
     }
-  }
+  };
 
   return (
     <div className={s.container}>
@@ -60,12 +58,12 @@ export default function BasketPage() {
                 <th>Quantity</th>
                 <th>Subtotal</th>
                 <th></th>
-              </tr>  
+              </tr>
             </thead>
             <tbody>
-              {
-                data.map(item => <BasketItem key={item.id} {...item} />)
-              }
+              {data.map((item) => (
+                <BasketItem key={item.id} {...item} />
+              ))}
             </tbody>
           </table>
         </div>
@@ -79,13 +77,17 @@ export default function BasketPage() {
               <span>${subtotal}</span>
             </div>
             <div className={s.basket_calculation_total}>
+              <span>Discount</span>
+              <span>${(subtotal - total).toFixed(2)}</span>
+            </div>
+            <div className={s.basket_calculation_total}>
               <span>Total</span>
               <span>${total}</span>
             </div>
-            <MainButton children={'order'} onClickHandler={onClickHandler}/>
+            <MainButton children={"order"} onClickHandler={onClickHandler} />
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

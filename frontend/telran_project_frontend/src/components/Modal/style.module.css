@@ -1,4 +1,4 @@
-.modal{
+.modal {
     height: 100vh;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.4);
@@ -14,7 +14,7 @@
     z-index: 5;
 }
 
-.modal_active{
+.modal_active {
     height: 100vh;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.4);
@@ -28,7 +28,8 @@
     z-index: 5;
     transform: scale(1);
 }
-.modal_content{
+
+.modal_content {
     padding: 20px;
     border-radius: 12px;
     background-color: #fff;
@@ -37,9 +38,10 @@
     transform: translateY(-100%);
     transition: 0.4s all;
     z-index: 5;
-    
+
 }
-.modal_content_active{
+
+.modal_content_active {
     padding: 20px;
     background-color: #fff;
     width: 40vw;
@@ -51,17 +53,20 @@
     flex-direction: column;
     justify-content: center;
 }
-.modal_header{
+
+.modal_header {
     display: flex;
     align-items: center;
     padding: 10px 10px 30px 10px;
     border-bottom: 1px solid var(--white);
 }
-.modal_header h1{
+
+.modal_header h1 {
     font-family: DM serif Display;
     font-size: 2rem;
 }
-.modal_header button{
+
+.modal_header button {
     margin-left: auto;
     background: transparent;
     border-radius: 50%;
@@ -73,18 +78,22 @@
     border: none;
     transition: transform 0.4s;
 }
-.modal_header button:hover{
+
+.modal_header button:hover {
     transform: scale(1.1);
 }
-.modal_items{
+
+.modal_items {
     height: 70vh;
     overflow-y: scroll;
-    
+
 }
-.modal_items p{
+
+.modal_items p {
     text-align: left;
 }
-.modal_basket_total{
+
+.modal_basket_total {
     border-top: 1px solid var(--white);
     border-bottom: 1px solid var(--white);
     display: flex;
@@ -93,23 +102,24 @@
     padding: 15px 0;
     margin-bottom: 1vh;
 }
-.modal_basket_total :first-child{
+
+.modal_basket_total :first-child {
     font-family: inherit;
     font-weight: 700;
     color: var(--darkGrey);
 
 }
-.modal_basket_total :last-child{
+
+.modal_basket_total :last-child {
     color: var(--lightGrey);
 }
-.menu_wrapper{
 
-}
-.menu_icon{
+.menu_icon {
     color: var(--khaki);
     padding: 10px;
 }
-.menu_title{
+
+.menu_title {
     color: var(--lightKhaki);
     font-family: inherit;
     text-transform: uppercase;
@@ -117,19 +127,23 @@
 }
 
 @media (max-width: 769px) {
+
     .modal_content,
-    .modal_content_active{
-        width: 60vw;   
+    .modal_content_active {
+        width: 80vw;
     }
-    .modal_items table{
+
+    .modal_items table {
         width: 100%;
     }
-    
-    
+
+
 }
-@media (max-width: 769px) {
+
+@media (max-width: 400px) {
+
     .modal_content,
-    .modal_content_active{
-        width: 100vw;   
+    .modal_content_active {
+        width: 100vw;
     }
 }

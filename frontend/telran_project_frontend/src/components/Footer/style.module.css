@@ -1,7 +1,8 @@
-.container{
+.container {
     background-color: var(--lightBack);
 }
-.footer{
+
+.footer {
     max-width: var(--width);
     height: fit-content;
     margin: 0 auto;
@@ -9,7 +10,8 @@
     justify-content: space-between;
     padding: 20px 2vw;
 }
-.footer_title{
+
+.footer_title {
     font-family: DM serif Display;
     font-size: 21px;
     padding: 10px 0;
@@ -20,16 +22,18 @@
     color: var(--khaki);
     transition: color .7s;
 }
-.footer_links a:hover{
+
+.footer_links a:hover {
     color: var(--lightKhaki);
 }
-.footer_links div, 
-.footer_subscribe_form div{
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
-   font-family: inherit;
-   font-size: 15px;
+
+.footer_links div,
+.footer_subscribe_form div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: inherit;
+    font-size: 15px;
 }
 
 /***************************/
@@ -38,51 +42,71 @@
     align-items: center;
     margin: 10px 0;
 }
+
 .social_links a {
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 5px;
-    
+
 }
+
 .social_links a:not(:last-child) {
     margin-right: 10px;
 }
 
-.social_links img{
+.social_links img {
     width: 20px;
     height: 20px;
     transition: transform .7s;
 }
+
 .social_links a img:hover {
     transform: scale(1.08);
 }
-.subscribe_form{
+
+.subscribe_form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.subscribe_form input{
+
+.subscribe_form input {
     width: 100%;
     padding: 10px;
     border: none;
     outline: none;
 }
 
+.footer_cpRights {
+    max-width: var(--width);
+    margin: 0 auto;
+    padding: 2rem;
+    color: var(--lightGrey);
+    font-weight: 700;
+    font-size: var(--font);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-top: 1px solid var(--white);
+}
+
 /***********************************************/
-@media(max-width: 768px){
-    .footer{
+@media(max-width: 768px) {
+    .footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 30px;
     }
-    .footer_title{
+
+    .footer_title {
         font-size: 19px;
         margin-bottom: 0;
     }
-    .subscribe_form{
+
+    .subscribe_form {
         align-items: center;
     }
 }

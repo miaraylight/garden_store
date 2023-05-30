@@ -11,11 +11,10 @@
     --darkGrey: #676867F2;
     --width: 1340px;
     --lightBlue: #e0eae8;
-
+    --font: 15px;
 
 }
 .App {
-    
     margin: 0 auto;
 }
 *::-webkit-scrollbar {

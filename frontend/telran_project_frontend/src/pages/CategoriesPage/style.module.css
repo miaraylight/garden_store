@@ -1,28 +1,31 @@
-.container{
+.container {
     margin: 0 auto 5%;
     background-image: url(/public/images/categories-bg.jpg);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
 }
-.title_wrapper{
-    margin-bottom: 50px;
-    padding: 150px 0;
+
+.title_wrapper {
+    padding: 8vw 0;
     background: transparent;
 }
-.title_wrapper h3{
+
+.title_wrapper h3 {
     max-width: var(--width);
     margin: 0 auto;
     text-align: center;
-    font-size: 50px;
+    font-size: calc(1rem + 3vw);
     font-family: DM serif Display;
     color: var(--black);
 }
-.wrapper{
+
+.wrapper {
     background: white;
     padding: 50px 0 100px;
 }
-.categories_wrapper{
+
+.categories_wrapper {
     max-width: var(--width);
     margin: 0 auto;
     padding: 20px 2vw;

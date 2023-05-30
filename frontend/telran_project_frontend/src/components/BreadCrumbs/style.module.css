@@ -1,6 +1,7 @@
 .breadCrumbs{
     width: 100%;
 }
+
 .breadCrumbs a{
     color: var(--lightGrey);
     font-family: inherit;

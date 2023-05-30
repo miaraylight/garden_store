@@ -11,7 +11,7 @@ export default function ProductItem({
   price,
   discont_price,
   image,
-  view
+  view,
 }) {
   const link = `/product/item/${id}`;
   const [toggleBasketBtn, setToggleBasketBtn] = useState({ display: "none" });
@@ -67,7 +67,7 @@ export default function ProductItem({
           </button>
         </div>
       </div>
-      <Link to={link} className={view ? s.link_grid: s.link_list}>
+      <Link to={link} className={view ? s.link_grid : s.link_list}>
         <div className={s.card_img_block}>
           <div className={s.card_img}>
             <img src={`http://localhost:3333/${image}`} alt="product" />
@@ -77,7 +77,7 @@ export default function ProductItem({
         <div className={s.card_content_block}>
           <p className={s.card_title}>{title}</p>
           <div className={s.card_price_block}>
-            <p className={s.price}>${price}</p>
+            <p className={discont_price ? s.price : ''}>${price}</p>
             <p className={s.dicount_price}>${discont_price}</p>
           </div>
         </div>

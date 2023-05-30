@@ -1,4 +1,4 @@
-.basketItem_wrapper{
+.basketItem_wrapper {
     width: 100%;
     min-height: 100px;
     border-bottom: 1px solid var(--white);
@@ -7,21 +7,25 @@
     font-size: 15px;
     padding: 10px;
 }
+
 .basketItem_wrapper td {
     padding: 8px;
 }
+
 .basketItem_image {
     max-width: 120px;
-    
+
     height: 100%;
     aspect-ratio: 1;
 }
-.basketItem_image img{
+
+.basketItem_image img {
     width: 100%;
     min-width: 70px;
     height: 100%;
 }
-.basketItem_title{
+
+.basketItem_title {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -30,15 +34,15 @@
     color: var(--khaki);
     text-transform: capitalize;
     text-align: left;
-    
+
 }
 
-.basketItem_toolbar{
+.basketItem_toolbar {
     display: flex;
-    align-items: center;
 }
-.basketItem_toolbar button, 
-.basketItem_toolbar p{
+
+.basketItem_toolbar button,
+.basketItem_toolbar p {
     width: 38px;
     height: 38px;
     background: transparent;
@@ -50,16 +54,22 @@
     font-weight: 700;
     transition: color .5s;
 }
-.basketItem_toolbar button{
+
+.basketItem_toolbar button {
     font-size: 20px;
     font-weight: 100;
     cursor: pointer;
 }
-.basketItem_toolbar button:hover{
+
+.basketItem_toolbar button:hover {
     color: var(--lightGrey);
 }
 
-.basketItem_deleteBtn{
+.subtotal {
+    color: var(--lightGrey);
+}
+
+.basketItem_deleteBtn {
     margin-left: auto;
     background: transparent;
     border: 1px solid var(--lightGrey);
@@ -69,40 +79,45 @@
     cursor: pointer;
     vertical-align: middle;
 }
-.basketItem_deleteBtn:hover{
+
+.basketItem_deleteBtn:hover {
     border: 1px solid var(--darkGrey);
     color: var(--darkGrey);
 }
 
 @media (max-width: 1000px) {
-    .basketItem_toolbar button, 
-    .basketItem_toolbar p{
+
+    .basketItem_toolbar button,
+    .basketItem_toolbar p {
         width: 30px;
         height: 30px;
     }
-    .basketItem_priceBlock{
+
+    .basketItem_priceBlock {
         display: none;
     }
 
 }
+
 @media (max-width: 769px) {
-    
+
     .basketItem_title {
         text-align: right;
     }
+
     .basketItem_toolbar {
         width: fit-content;
         margin-left: auto;
     }
-    .basketItem_image{
+
+    .basketItem_image {
         margin-left: auto;
     }
+
     .basketItem_image {
         min-width: 45%;
         height: 100%;
         aspect-ratio: 1;
     }
-    
+
 }
-
-

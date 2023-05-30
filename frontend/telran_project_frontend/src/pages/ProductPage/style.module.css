@@ -1,24 +1,25 @@
-.container{
+.container {
     max-width: var(--width);
     margin: 0 auto;
     padding: 50px 2vw;
-    border: 1px solid black;
 }
-.product_page_title{
+
+.product_page_title {
     font-family: DM serif Display;
     text-align: center;
     font-size: 50px;
 }
-.products_wrapper_grid{
+
+.products_wrapper_grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-auto-rows: 1fr;
     gap: 10px;
-    
+
 }
 
 @media (max-width: 768px) {
-    .products_wrapper{
+    .products_wrapper {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 }
