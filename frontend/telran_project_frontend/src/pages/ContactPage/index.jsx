@@ -70,14 +70,21 @@ export default function ContactPage() {
           <div className={s.social_media_wrapper}>
             <h5>Follow us</h5>
             <div className={s.social_links}>
-              <a href="https://www.instagram.com/" className={s.contact_media}>
+              <a 
+                href="https://www.instagram.com/"
+                rel="noreferrer"
+                target="_blank" 
+                className={s.contact_media}
+              >
                 <img
                   src={process.env.PUBLIC_URL + "/images/instagram-icon.png"}
                   alt="instagram-icon"
                 />
               </a>
               <a
-                href="https://www.linkedin.com/in/malika-taitelieva-88b333273/"
+                href="https://www.linkedin.com/in/malika-taitelieva/"
+                rel="noreferrer"
+                target="_blank"
                 className={s.contact_media}
               >
                 <img
@@ -85,13 +92,23 @@ export default function ContactPage() {
                   alt="ln-icon"
                 />
               </a>
-              <a href="https://www.youtube.com/" className={s.contact_media}>
+              <a 
+                href="https://www.youtube.com/"
+                rel="noreferrer"
+                target="_blank" 
+                className={s.contact_media}
+              >
                 <img
                   src={process.env.PUBLIC_URL + "/images/youtube-icon.png"}
                   alt="youtube-icon"
                 />
               </a>
-              <a href="https://t.me/sirokko01" className={s.contact_media}>
+              <a 
+                href="https://t.me/miaraylight"
+                rel="noreferrer"
+                target="_blank" 
+                className={s.contact_media}
+              >
                 <img
                   src={process.env.PUBLIC_URL + "/images/telegram-icon.png"}
                   alt="telegram-icon"

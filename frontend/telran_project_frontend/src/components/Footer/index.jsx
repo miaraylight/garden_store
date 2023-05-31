@@ -46,7 +46,12 @@ export default function Footer() {
         <div className={s.footer_social}>
           <p className={s.footer_title}>Our Socials</p>
           <div className={s.social_links}>
-            <a href="https://www.instagram.com/" className={s.contact_media}>
+            <a 
+              href="https://www.instagram.com/"
+              rel="noreferrer"
+              target="_blank" 
+              className={s.contact_media}
+            >
               <img
                 src={process.env.PUBLIC_URL + "/images/instagram-icon.png"}
                 alt="instagram-icon"
@@ -54,6 +59,8 @@ export default function Footer() {
             </a>
             <a
               href="https://www.linkedin.com/in/malika-taitelieva-88b333273/"
+              rel="noreferrer"
+              target="_blank"
               className={s.contact_media}
             >
               <img
@@ -61,13 +68,23 @@ export default function Footer() {
                 alt="ln-icon"
               />
             </a>
-            <a href="https://www.youtube.com/" className={s.contact_media}>
+            <a 
+              href="https://www.youtube.com/"
+              rel="noreferrer"
+              target="_blank" 
+              className={s.contact_media}
+            >
               <img
                 src={process.env.PUBLIC_URL + "/images/youtube-icon.png"}
                 alt="youtube-icon"
               />
             </a>
-            <a href="https://t.me/sirokko01" className={s.contact_media}>
+            <a 
+              href="https://t.me/sirokko01"
+              rel="noreferrer"
+              target="_blank" 
+              className={s.contact_media}
+            >
               <img
                 src={process.env.PUBLIC_URL + "/images/telegram-icon.png"}
                 alt="telegram-icon"
@@ -95,6 +112,8 @@ export default function Footer() {
       </div>
       <a
         className={s.footer_cpRights}
+        rel="noreferrer"
+        target="_blank"
         href="https://websitedemos.net/egrow-plants-04/"
       >
         Copyright © 2023 eGrow Plants | Powered by eGrow Plants

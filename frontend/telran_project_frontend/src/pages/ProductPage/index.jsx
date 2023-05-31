@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ProductItem from "../../components/ProductItem";
 import s from "./style.module.css";
 import FilterBar from "../../components/FilterBar";
@@ -15,9 +15,7 @@ export default function ProductPage() {
   useEffect(() => {
     dispatch(resetFilters());
   }, []);
-  const { pathname } = useLocation();
-  if (pathname !== "/") {
-  }
+  
   const [view, setView] = useState(true);
   const status = useSelector((state) => state.product.status);
 

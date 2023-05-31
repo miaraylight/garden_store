@@ -1,10 +1,11 @@
 import React, { useMemo } from "react";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import s from "./style.module.css";
+import key from '../../apiKey'
 
 export default function FooterMap() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyAfigFcrzQ9bDXUWyTwAY6wnp6u0ysc2J8",
+    googleMapsApiKey: key,
   });
 
   if (!isLoaded) return <div>Loading...</div>;
