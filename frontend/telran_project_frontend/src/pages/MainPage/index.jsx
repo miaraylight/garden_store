@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import CategoryItem from "../../components/CategoryItem";
 
@@ -10,6 +10,9 @@ import { Link } from "react-router-dom";
 import { DynamicTitle } from "../../components/DynamicTitle";
 
 export default function MainPage() {
+  useEffect(() => {
+    window.scrollTo(0,0) 
+  }, [])
   const categories = useSelector((state) => state.category.list);
   const productsOnSale = useSelector((state) =>
     state.product.list.filter(({ discont_price }) => discont_price !== null)

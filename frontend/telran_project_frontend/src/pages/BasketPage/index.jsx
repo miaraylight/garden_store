@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./style.module.css";
 import { useSelector } from "react-redux";
 import BasketItem from "../../components/BasketItem";
@@ -7,6 +7,10 @@ import MainButton from "../../components/MainButton";
 import { DynamicTitle } from "../../components/DynamicTitle";
 
 export default function BasketPage() {
+  useEffect(() => {
+    window.scrollTo(0,0) 
+  }, [])
+
   const { product, basket } = useSelector((state) => state);
 
   const data = basket.list.map((item) => {

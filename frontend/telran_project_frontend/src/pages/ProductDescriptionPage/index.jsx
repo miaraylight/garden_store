@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import s from "./style.module.css";
@@ -8,6 +8,9 @@ import MainButton from "../../components/MainButton";
 import { DynamicTitle } from "../../components/DynamicTitle";
 
 export default function ProductDescriptionPage() {
+  useEffect(() => {
+    window.scrollTo(0,0) 
+  }, [])
   const dispatch = useDispatch();
   const { productId } = useParams();
   const products = useSelector((state) => state.product.list);

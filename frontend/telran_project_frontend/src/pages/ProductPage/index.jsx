@@ -9,6 +9,9 @@ import BreadCrumbs from "../../components/BreadCrumbs";
 import { DynamicTitle } from "../../components/DynamicTitle";
 
 export default function ProductPage() {
+  useEffect(() => {
+    window.scrollTo(0,0) 
+  }, [])
   const { category, sale } = useParams();
   const [discounted, setDiscounted] = useState();
   const dispatch = useDispatch();

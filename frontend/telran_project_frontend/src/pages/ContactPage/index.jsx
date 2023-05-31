@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./style.module.css";
 import FooterMap from "../../components/FooterMap";
 import { useForm } from "react-hook-form";
@@ -7,6 +7,9 @@ import MainButton from "../../components/MainButton";
 import { DynamicTitle } from "../../components/DynamicTitle";
 
 export default function ContactPage() {
+  useEffect(() => {
+    window.scrollTo(0,0) 
+  }, [])
   const { register, handleSubmit, reset } = useForm();
   const onSubmitHandler = async (data) => {
     try {
