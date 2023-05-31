@@ -15,6 +15,7 @@ import { fetchCategories } from "../../store/slice/categorySlice";
 import ContactPage from "../../pages/ContactPage";
 import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ScrollToTop from "../ScrollToTop";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <div className="App">
+      <ScrollToTop/>
       <ToastContainer
         transition={Flip}
         position="top-right"
