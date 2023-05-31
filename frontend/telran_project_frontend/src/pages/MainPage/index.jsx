@@ -7,6 +7,7 @@ import ProductItem from "../../components/ProductItem";
 import Banner from "../../components/Banner";
 import GetDiscountForm from "../../components/GetDiscountForm";
 import { Link } from "react-router-dom";
+import { DynamicTitle } from "../../components/DynamicTitle";
 
 export default function MainPage() {
   const categories = useSelector((state) => state.category.list);
@@ -16,6 +17,7 @@ export default function MainPage() {
 
   return (
     <div className={s.container}>
+      <DynamicTitle title={"Home"}/>
       <Banner />
       <div className={s.main_element}>
         <Link to={"/categories"}>Categories</Link>

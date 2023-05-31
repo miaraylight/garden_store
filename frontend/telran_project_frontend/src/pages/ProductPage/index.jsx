@@ -6,6 +6,7 @@ import s from "./style.module.css";
 import FilterBar from "../../components/FilterBar";
 import { resetFilters } from "../../store/slice/productSlice";
 import BreadCrumbs from "../../components/BreadCrumbs";
+import { DynamicTitle } from "../../components/DynamicTitle";
 
 export default function ProductPage() {
   const { category, sale } = useParams();
@@ -47,6 +48,7 @@ export default function ProductPage() {
 
   return (
     <div>
+      <DynamicTitle title={"Shop"}/>
       {status === "Loading" ? (
         <div className={s.container}>
           <p>Loading...</p>

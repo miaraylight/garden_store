@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import BasketItem from "../../components/BasketItem";
 import { toast } from "react-toastify";
 import MainButton from "../../components/MainButton";
+import { DynamicTitle } from "../../components/DynamicTitle";
 
 export default function BasketPage() {
   const { product, basket } = useSelector((state) => state);
@@ -46,6 +47,7 @@ export default function BasketPage() {
 
   return (
     <div className={s.container}>
+      <DynamicTitle title={"Cart"}/>
       <h1 className={s.title}>Cart</h1>
       <div className={s.basket}>
         <div className={s.basket_items_block}>

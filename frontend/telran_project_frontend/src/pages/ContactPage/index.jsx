@@ -4,6 +4,7 @@ import FooterMap from "../../components/FooterMap";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import MainButton from "../../components/MainButton";
+import { DynamicTitle } from "../../components/DynamicTitle";
 
 export default function ContactPage() {
   const { register, handleSubmit, reset } = useForm();
@@ -29,6 +30,7 @@ export default function ContactPage() {
   };
   return (
     <div className={s.container}>
+      <DynamicTitle title={"Contact"}/>
       <div className={s.title_wrapper}>
         <h3>Contact</h3>
       </div>

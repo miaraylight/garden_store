@@ -5,6 +5,7 @@ import s from "./style.module.css";
 import { addItemToBasket } from "../../store/slice/basketSlice";
 import { toast } from "react-toastify";
 import MainButton from "../../components/MainButton";
+import { DynamicTitle } from "../../components/DynamicTitle";
 
 export default function ProductDescriptionPage() {
   const dispatch = useDispatch();
@@ -48,6 +49,7 @@ export default function ProductDescriptionPage() {
       };
       return (
         <div className={s.container}>
+          <DynamicTitle title={"Item"}/>
           <div className={s.content}>
             <div className={s.product_item}>
               <div
