@@ -5,6 +5,7 @@ import "./sliderStyles.css";
 import { useDispatch } from "react-redux";
 import {
   filterByPriceRange,
+  searchByName,
   sortByPrice,
 } from "../../store/slice/productSlice";
 
@@ -18,6 +19,11 @@ export default function FilterBar({
   const dispatch = useDispatch();
   minValue = isNaN(minValue) ? 0 : minValue;
   maxValue = isNaN(maxValue) ? 0 : maxValue;
+
+  const onChangeHandler = (e) => {
+    console.log(e.target.value);
+    dispatch(searchByName(e.target.value))
+  }
 
   return (
     <div className={s.container}>
@@ -66,7 +72,9 @@ export default function FilterBar({
             </label>
           </div>
         </div>
-
+          <div className={s.search_block}>
+            <input type="text" onChange={onChangeHandler}/>
+          </div>
         <div className={s.sort_block}>
           <select
             name="sort_options"

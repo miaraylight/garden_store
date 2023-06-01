@@ -17,6 +17,13 @@
     gap: 10px;
 
 }
+.filterInfo{
+    width: 100vw;
+    font-size: calc(1rem + .5vw);
+    color: var(--khaki);
+    font-family: inherit;
+    text-align: center;
+}
 
 @media (max-width: 768px) {
     .products_wrapper {

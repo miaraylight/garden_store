@@ -48,6 +48,7 @@ export default function ProductPage() {
   if (discounted) {
     products = products.filter(({ discont_price }) => discont_price !== null);
   }
+  const filteredproducts = products.filter(({ show, nameInSearchRange }) => show && nameInSearchRange)
 
   return (
     <div>
@@ -77,11 +78,10 @@ export default function ProductPage() {
                 : { gridTemplateColumns: "1fr" }
             }
           >
-            {products
-              .filter(({ show }) => show)
-              .map((item) => (
-                <ProductItem key={item.id} {...item} view={view} />
-              ))}
+            {filteredproducts.length > 0 ?
+              filteredproducts.map((item) => ( 
+                <ProductItem key={item.id} {...item} view={view} />))
+              : <p className={s.filterInfo}>No matches found</p>}
           </div>
         </div>
       )}

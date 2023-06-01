@@ -13,6 +13,7 @@ export const fetchProducts = createAsyncThunk(
         ...item,
         final_price: item.discont_price ?? item.price,
         show: true,
+        nameInSearchRange: true
       }));
       return newData;
     } catch (error) {
@@ -27,6 +28,12 @@ export const productSlice = createSlice({
     list: [],
   },
   reducers: {
+    searchByName(state, {payload}) {
+      state.list = state.list.map((item) => ({
+        ...item,
+        nameInSearchRange: item.title.toLowerCase().startsWith(payload.toLowerCase())
+      }))
+    },
     sortByPrice(state, { payload }) {
       if (payload === "lowToHigh") {
         state.list.sort((a, b) => a.final_price - b.final_price);
@@ -63,6 +70,6 @@ export const productSlice = createSlice({
   },
 });
 
-export const { sortByPrice, filterByPriceRange, resetFilters } =
+export const { sortByPrice, filterByPriceRange, resetFilters, searchByName } =
   productSlice.actions;
 export default productSlice.reducer;
