@@ -102,6 +102,13 @@
 }
 
 @media (max-width: 768px) {
+  .wrapper{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 5;
+  }
   .container {
     display: flex;
     justify-content: space-between;

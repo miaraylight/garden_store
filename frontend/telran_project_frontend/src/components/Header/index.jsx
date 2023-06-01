@@ -26,7 +26,7 @@ export default function Header() {
   const [modalActive, setModaleActive] = useState([false]);
 
   return (
-    <div>
+    <div className={s.wrapper}>
       <div className={s.container}>
         <button
           className={s.burger_btn}
