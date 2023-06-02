@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import s from "./style.module.css";
 import Modal from "../Modal";
 import Logo from "../Logo";
+import BasketItem from "../../components/BasketItem";
+import MainButton from "../MainButton";
 
 export default function Header() {
   const { product, basket } = useSelector((state) => state);
+
   const basketCount = basket.list.reduce((acc, { count }) => acc + count, 0);
+
   const data = basket.list.map((item) => {
     const target = product.list.find(({ id }) => item.id === id);
     return { ...target, ...item };
@@ -21,9 +25,10 @@ export default function Header() {
     { title: "contact", to: "/contact", icon: "location_on" },
     { title: "cart", to: "/basket", icon: "shopping_cart" },
   ];
+
   const subtotal = data.reduce((acc, item) => acc + item.price * item.count, 0);
 
-  const [modalActive, setModaleActive] = useState([false]);
+  const [modalActive, setModaleActive] = useState(["", false]);
 
   return (
     <div className={s.wrapper}>
@@ -31,7 +36,7 @@ export default function Header() {
         <button
           className={s.burger_btn}
           onClick={() => {
-            setModaleActive(["nav", true]);
+            setModaleActive(["Menu", true]);
           }}
         >
           <span className="material-icons">dehaze</span>
@@ -75,7 +80,7 @@ export default function Header() {
             data-count={basketCount === 0 ? null : basketCount}
             className={s.link_basket}
             onClick={() => {
-              setModaleActive(["basket", true]);
+              setModaleActive(["Shopping cart", true]);
             }}
           >
             <img
@@ -89,10 +94,49 @@ export default function Header() {
         <Modal
           activeModal={modalActive}
           setActive={setModaleActive}
-          list={sideMenuData}
-          data={data}
-          subtotal={subtotal}
-        />
+          title={modalActive[0]}
+        >
+          <div>
+            <table>
+              <tbody>
+                {modalActive[0] === "Menu"
+                  ? sideMenuData.map(({ title, icon, to }) => (
+                      <tr key={title} className={s.menu_wrapper}>
+                        <td className={s.menu_icon}>
+                          <span className="material-icons">{icon}</span>
+                        </td>
+                        <td
+                          // onClick={() => setActive(["", false])}
+                          className={s.menu_title}
+                        >
+                          <NavLink to={to}>{title}</NavLink>
+                        </td>
+                      </tr>
+                    ))
+                  : data.map((elem) => (
+                      <BasketItem key={elem.id} {...elem} modal={true} />
+                    ))}
+              </tbody>
+            </table>
+            <div
+              className={s.modal_basket_options}
+              style={
+                modalActive[0] === "Menu"
+                  ? { display: "none" }
+                  : { display: "block" }
+              }
+            >
+              <div className={s.modal_basket_total}>
+                <p>Subtotal:</p>
+                <p>{subtotal}$</p>
+              </div>
+
+              <Link to="/basket">
+                <MainButton children={"view cart"} />
+              </Link>
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   );

@@ -44,7 +44,6 @@ export default function ProductPage() {
   const prices = products.map(({ final_price }) => final_price)
   const min = Math.round(Math.min(...prices))
   const max = Math.round(Math.max(...prices))
-  console.log(min, max);
 
   if (discounted) {
     products = products.filter(({ discont_price }) => discont_price !== null);

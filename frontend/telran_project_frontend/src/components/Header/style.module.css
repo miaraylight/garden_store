@@ -94,6 +94,37 @@
 .burger_btn:focus {
   background: transparent;
 }
+.menu_title {
+  color: var(--lightKhaki);
+  font-family: inherit;
+  text-transform: uppercase;
+  padding: 10px;
+}
+.modal_basket_total {
+  border-top: 1px solid var(--white);
+  border-bottom: 1px solid var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  margin-bottom: 1vh;
+}
+
+.modal_basket_total :first-child {
+  font-family: inherit;
+  font-weight: 700;
+  color: var(--darkGrey);
+
+}
+
+.modal_basket_total :last-child {
+  color: var(--lightGrey);
+}
+
+.menu_icon {
+  color: var(--khaki);
+  padding: 10px;
+}
 
 @media (max-width: 850px) {
   .links_wrapper a:not(:last-child) {
