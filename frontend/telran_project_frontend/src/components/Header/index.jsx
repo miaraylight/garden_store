@@ -106,7 +106,7 @@ export default function Header() {
                           <span className="material-icons">{icon}</span>
                         </td>
                         <td
-                          // onClick={() => setActive(["", false])}
+                          onClick={() => setModaleActive(["", false])}
                           className={s.menu_title}
                         >
                           <NavLink to={to}>{title}</NavLink>
@@ -131,7 +131,7 @@ export default function Header() {
                 <p>{subtotal}$</p>
               </div>
 
-              <Link to="/basket">
+              <Link to="/basket" onClick={() => setModaleActive(["", false])}>
                 <MainButton children={"view cart"} />
               </Link>
             </div>
