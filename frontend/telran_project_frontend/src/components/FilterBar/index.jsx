@@ -20,11 +20,6 @@ export default function FilterBar({
   minValue = isNaN(minValue) ? 0 : minValue;
   maxValue = isNaN(maxValue) ? 0 : maxValue;
 
-  const onChangeHandler = (e) => {
-    console.log(e.target.value);
-    dispatch(searchByName(e.target.value))
-  }
-
   return (
     <div className={s.container}>
       <div className={s.toolbar}>
@@ -73,7 +68,11 @@ export default function FilterBar({
           </div>
         </div>
           <div className={s.search_block}>
-            <input type="text" onChange={onChangeHandler}/>
+            <input className={s.filter_search} 
+            type="text" 
+            onChange={(e) => dispatch(searchByName(e.target.value))}
+            placeholder="Search products..."
+            />
           </div>
         <div className={s.sort_block}>
           <select

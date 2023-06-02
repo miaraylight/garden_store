@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import MainButton from "../MainButton";
 
 export default function GetDiscountForm() {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, setError, formState: { errors } } = useForm();
 
   const onSubmitHandler = async (data) => {
     try {
