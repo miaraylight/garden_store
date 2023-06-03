@@ -114,8 +114,9 @@ export default function Header() {
                         </td>
                       </tr>
                     ))
-                  : data.map((elem) => (
-                      <BasketItem key={elem.id} {...elem} modal={true} />
+                  : data.length === 0 
+                    ? <div className={s.basket_empty}>Your cart is currently empty</div> 
+                    : data.map((elem) => (<BasketItem key={elem.id} {...elem} modal={true} />
                     ))}
               </tbody>
             </table>

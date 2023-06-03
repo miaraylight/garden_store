@@ -5,6 +5,7 @@ import BasketItem from "../../components/BasketItem";
 import { toast } from "react-toastify";
 import MainButton from "../../components/MainButton";
 import { DynamicTitle } from "../../components/DynamicTitle";
+import { Link } from "react-router-dom";
 
 export default function BasketPage() {
   useEffect(() => {
@@ -53,7 +54,17 @@ export default function BasketPage() {
     <div className={s.container}>
       <DynamicTitle title={"Cart"}/>
       <h1 className={s.title}>Cart</h1>
-      <div className={s.basket}>
+      {
+        data.length === 0 
+        ? <div className={s.basket_empty_wrapper}>
+          <p className={s.basket_empty}>
+            <span className="material-icons">event_note</span>
+            Your cart is currently empty.</p>
+          <Link to='/product/all'>
+          <MainButton>return to shop</MainButton>
+          </Link>
+        </div>
+        :<div className={s.basket}>
         <div className={s.basket_items_block}>
           <table className={s.table}>
             <thead>
@@ -94,6 +105,8 @@ export default function BasketPage() {
           </div>
         </div>
       </div>
+      }
+      
     </div>
   );
 }

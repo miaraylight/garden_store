@@ -10,7 +10,26 @@
     font-size: calc(1rem + 3vw);
     padding: 50px 0;
 }
-
+.basket_empty_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+}
+.basket_empty{
+    width: 100%;
+    font-family: inherit;
+    color: #515151;
+    background-color: #F7F6F7;
+    font-size: var(--font);
+    border-top: 2px solid var(--khaki);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+.basket_empty span{
+    color: var(--khaki);
+    margin-right: 10px;
+}
 .basket {
     display: grid;
     grid-template-columns: 62% 35%;
@@ -116,6 +135,12 @@
 }
 
 @media (max-width: 769px) {
+    .basket_empty_wrapper{
+        align-items: center;
+    }
+    .basket_empty{
+        justify-content: center;
+    }
     .basket {
         display: grid;
         grid-template-columns: 1fr;
