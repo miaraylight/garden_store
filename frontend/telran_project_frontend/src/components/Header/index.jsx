@@ -115,7 +115,7 @@ export default function Header() {
                       </tr>
                     ))
                   : data.length === 0 
-                    ? <div className={s.basket_empty}>Your cart is currently empty</div> 
+                    ? <tr ><td className={s.basket_empty}>Your cart is currently empty</td></tr> 
                     : data.map((elem) => (<BasketItem key={elem.id} {...elem} modal={true} />
                     ))}
               </tbody>

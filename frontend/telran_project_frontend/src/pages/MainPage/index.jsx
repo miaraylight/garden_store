@@ -36,9 +36,11 @@ export default function MainPage() {
         <Link to={"/product/sale"}>Sale</Link>
         <h3>Most popular plants</h3>
         <div className={s.sales_container}>
-          {productsOnSale.map((item) => (
-            <ProductItem key={item.id} {...item} view={true} />
-          ))}
+          {productsOnSale.map((item, index) => (
+            index % 2 === 0 ?
+            <ProductItem key={item.id} {...item} view={true}
+             />: null
+            ))}
         </div>
       </div>
     </div>

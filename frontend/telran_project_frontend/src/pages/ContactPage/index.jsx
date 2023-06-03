@@ -22,7 +22,7 @@ export default function ContactPage() {
       if (response.ok) {
         const jsonResponse = await response.json();
         console.log(jsonResponse.message);
-        toast("Done!");
+        toast.success("Done!");
       }
     } catch (error) {
       console.log(error);

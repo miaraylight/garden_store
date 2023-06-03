@@ -144,7 +144,7 @@
 .product_item_countbar {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin: 5% 0 0 0;
 }
 
 .product_item_countbar button,

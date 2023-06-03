@@ -1,22 +1,20 @@
-# Данный backend позволит вам выполнить проект
+# Garden Store Backend
 
-[Ссылка на макет](https://www.figma.com/file/yNWvXvjZC0t8d9yBOpeEPy/Garden?node-id=4743%3A989)
+This project is a backend server written in JavaScript using the Express framework. This server uses a SQLite3 database and ORM Sequelize to process database queries. In addition, the project uses the cors module to secure and allow cross-domain requests. The package.json file specifies server dependencies, including Express, Sequelize, and SQLite3, as well as a nodemon utility to automatically restart the server when code changes in development mode.
 
-Это API, которое вам необходимо скачать и запустить у себя локально. Вам не нужно его менять или дорабатывать. Данный проект будет представлять back-end вашего проекта.
+## Getting started with API
 
-## Команды для запуска API
+- `npm i `
+- `npm run dev `
 
-### `npm i `
-### `npm run dev `
+## API links
 
-## Ссылки API
+### GET
+#### **/categories/all** - link to all categories
+#### **/categories/1**   - link to products from the first category
+#### **/products/all**   - link to get all products
+#### **/products/1**     - link to get first product
 
-## GET
-### /categories/all - ссылка на все категории
-### /categories/1   - ссылка на продукты из первой категории
-### /products/all   - ссылка на все продукты
-### /products/1     - ссылка на первый продукт
-
-## POST
-### /sale/send      - отправка заявки на купон
-### /order/send     - отправка заказа на сервер
+### POST
+#### **/sale/send**      - link to send coupon request
+#### **/order/send**     - sending order to server

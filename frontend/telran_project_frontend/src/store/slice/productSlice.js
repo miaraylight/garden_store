@@ -51,7 +51,7 @@ export const productSlice = createSlice({
       );
     },
     resetFilters(state) {
-      state.list = state.list.map((item) => ({ ...item, show: true, nameInSearchRange: true }));
+      state.list = state.list.sort((a, b) => a.id - b.id).map((item) => ({ ...item, show: true, nameInSearchRange: true }));
     },
   },
   extraReducers: (builder) => {
