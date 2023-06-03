@@ -104,6 +104,21 @@
 .basket_calculation_total :last-child {
     color: var(--darkGrey);
 }
+.basket_order_form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    gap: 2%;
+}
+.basket_order_form input {
+    height: 3rem;
+    padding: 10px;
+    border: 1px solid var(--white);
+    outline: none;
+    color: var(--darkGrey);
+    margin: 5% 0 0 0;
+}
 
 .table {
     width: 100%;
@@ -189,12 +204,15 @@
     }
 
     .basket_total_content {
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding-bottom: 20px;
     }
-
+    .basket_calculation_wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
     .basket_calculation_total {
         width: fit-content;
         flex-direction: column;
@@ -206,5 +224,10 @@
     .basket_calculation_total :first-child {
         padding: 0 0 10px 0;
         font-weight: 700;
+    }
+    .basket_order_form {
+        flex-direction: column;
+        align-items: center;
+        gap: 2vh;
     }
 }

@@ -1,37 +1,48 @@
 import React, { useEffect } from "react";
 import s from "./style.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import BasketItem from "../../components/BasketItem";
 import { toast } from "react-toastify";
 import MainButton from "../../components/MainButton";
 import { DynamicTitle } from "../../components/DynamicTitle";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { resetBasket } from "../../store/slice/basketSlice";
 
 export default function BasketPage() {
   useEffect(() => {
     window.scrollTo(0,0) 
   }, [])
 
+  const dispatch = useDispatch()
+
+  const navigate = useNavigate()
+
   const { product, basket } = useSelector((state) => state);
 
-  const data = basket.list.map((item) => {
+  const basketData = basket.list.map((item) => {
     const target = product.list.find(({ id }) => item.id === id);
     return { ...target, ...item };
   });
 
-  const subtotal = data
+  const subtotal = basketData
     .reduce((acc, item) => acc + item.price * item.count, 0)
     .toFixed(2);
-  let total = data
+  let total = basketData
     .reduce((acc, item) => acc + item.final_price * item.count, 0)
     .toFixed(2);
 
-  const onClickHandler = async () => {
+    const { register, handleSubmit, reset } = useForm();
+
+  const onSubmitHandler = async (data) => {
     try {
       const responce = await fetch("http://localhost:3333/order/send", {
         method: "POST",
         headers: {
-          Accept: data,
+          Accept: {
+            order: basketData,
+            coupon: data ?? ''
+          },
         },
       });
       if (responce.ok) {
@@ -40,7 +51,10 @@ export default function BasketPage() {
         toast.promise(() => Promise.resolve(jsonResponse), {
           pending: "Order is processing...",
           success: "Order completed successfully!",
-        });
+        }, {autoClose: 2300});
+        dispatch(resetBasket())
+        setTimeout(() => {navigate('/')}, 3000)
+        
       }
     } catch (error) {
       console.log(error);
@@ -48,14 +62,19 @@ export default function BasketPage() {
         error: "Something went wrong",
       });
     }
+    reset()
   };
+
+  const onClickHandler = () => {
+
+  }
 
   return (
     <div className={s.container}>
       <DynamicTitle title={"Cart"}/>
       <h1 className={s.title}>Cart</h1>
       {
-        data.length === 0 
+        basketData.length === 0 
         ? <div className={s.basket_empty_wrapper}>
           <p className={s.basket_empty}>
             <span className="material-icons">event_note</span>
@@ -78,7 +97,7 @@ export default function BasketPage() {
               </tr>
             </thead>
             <tbody className={s.basket_items}>
-              {data.map((item) => (
+              {basketData.map((item) => (
                 <BasketItem key={item.id} {...item} />
               ))}
             </tbody>
@@ -89,7 +108,8 @@ export default function BasketPage() {
             <p>Card totals</p>
           </div>
           <div className={s.basket_total_content}>
-            <div className={s.basket_calculation_subtotal}>
+            <div className={s.basket_calculation_wrapper}>
+              <div className={s.basket_calculation_subtotal}>
               <span>Subtotal</span>
               <span>${subtotal}</span>
             </div>
@@ -101,7 +121,15 @@ export default function BasketPage() {
               <span>Total</span>
               <span>${total}</span>
             </div>
-            <MainButton children={"order"} onClickHandler={onClickHandler} />
+            </div>
+            
+            <form className={s.basket_order_form} onSubmit={handleSubmit(onSubmitHandler)}>
+              <input 
+              type="text"
+              {...register("coupon")} 
+              placeholder="Enter your coupon if any"/>
+              <MainButton children={"order"} onClickHandler={onClickHandler} />
+            </form>
           </div>
         </div>
       </div>

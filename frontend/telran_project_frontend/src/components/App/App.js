@@ -31,7 +31,7 @@ function App() {
       <ToastContainer
         transition={Flip}
         position="top-right"
-        autoClose={500}
+        autoClose={600}
         hideProgressBar
         newestOnTop={false}
         closeOnClick

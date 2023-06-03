@@ -40,6 +40,10 @@ export const basketSlice = createSlice({
       target.count < 2 ? (target.count = 1) : target.count--;
       saveDataToLocalStorage([...state.list]);
     },
+    resetBasket(state) {
+      state.list = []
+      saveDataToLocalStorage([...state.list]);
+    }
   },
 });
 
@@ -48,5 +52,6 @@ export const {
   deleteItemFromBasket,
   basketItemIncrement,
   basketItemDecrement,
+  resetBasket
 } = basketSlice.actions;
 export default basketSlice.reducer;
