@@ -94,6 +94,7 @@ export default function Header() {
         <Modal
           activeModal={modalActive}
           setActive={setModaleActive}
+          appearance={modalActive[0] === "Shopping cart" ? 'right' : 'left'}
           title={modalActive[0]}
         >
           <div>

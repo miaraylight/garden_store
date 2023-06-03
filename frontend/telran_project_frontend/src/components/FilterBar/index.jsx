@@ -66,7 +66,7 @@ export default function FilterBar({
           />
         </button>
       </div>
-      <Modal activeModal={activeModal} setActive={setActiveModal}>
+      <Modal activeModal={activeModal} setActive={setActiveModal} appearance={'left'}>
         <div className={s.toolbar}>
           <div className={s.search_block}>
             <input

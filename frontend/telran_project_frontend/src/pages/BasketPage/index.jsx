@@ -66,7 +66,7 @@ export default function BasketPage() {
                 <th></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className={s.basket_items}>
               {data.map((item) => (
                 <BasketItem key={item.id} {...item} />
               ))}

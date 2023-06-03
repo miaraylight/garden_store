@@ -5,15 +5,25 @@ export default function Modal({
   activeModal,
   setActive,
   title,
+  appearance,
   children
 }) {
+  const handleAppearance = () => {
+    if (appearance === 'right') {
+      return activeModal[1] ? s.modal_content_active_right : s.modal_content_right
+    }else if (appearance === 'left') {
+      return activeModal[1] ? s.modal_content_active : s.modal_content
+    }
+    
+  }
   return (
     <div
       className={activeModal[1] ? s.modal_active : s.modal}
       onClick={() => setActive(["",false])}
+      
     >
       <div
-        className={activeModal[1] ? s.modal_content_active : s.modal_content}
+        className={handleAppearance()}
         onClick={(e) => e.stopPropagation()}
       >
         <div className={s.modal_header}>

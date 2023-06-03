@@ -7,7 +7,7 @@ import Logo from "../Logo";
 import MainButton from "../MainButton";
 
 export default function Footer() {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const onSubmitHandler = async (data) => {
     try {
       const response = await fetch("http://localhost:3333/feedback/send", {
@@ -106,6 +106,7 @@ export default function Footer() {
                 pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
               })}
             />
+            <p className={s.error_message}>{errors.email ? 'Please check the correctness of email' : ''}</p>
             <MainButton children={"subscribe"} />
           </form>
         </div>

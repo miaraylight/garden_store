@@ -9,8 +9,7 @@
     align-items: center;
     opacity: 0;
     pointer-events: none;
-    transform: scale(0);
-    transition: transform 0.8s ease-in-out;
+    transition: 0.5s;
     z-index: 5;
 }
 
@@ -26,7 +25,8 @@
     opacity: 1;
     pointer-events: all;
     z-index: 5;
-    transform: scale(1);
+    transition: 0.5s;
+    
 }
 
 .modal_content {
@@ -35,10 +35,12 @@
     background-color: #fff;
     width: 40vw;
     height: 100vh;
-    transform: translateY(-100%);
-    transition: 0.4s all;
+    transition: all 0.5s;
     z-index: 5;
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
 }
 
 .modal_content_active {
@@ -46,11 +48,42 @@
     background-color: #fff;
     width: 40vw;
     height: 100vh;
-    transition: transform 0.4s ease-in-out;
-    transform: translateY(0%);
+    transition: all 0.5s;
     z-index: 5;
     display: flex;
     flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+}
+.modal_content_right {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fff;
+    width: 40vw;
+    height: 100vh;
+    transition: all 0.5s;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+}
+
+.modal_content_active_right {
+    padding: 20px;
+    background-color: #fff;
+    width: 40vw;
+    height: 100vh;
+    transition: all 0.5s;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(0);
 }
 
 .modal_header {

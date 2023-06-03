@@ -100,6 +100,12 @@
   text-transform: uppercase;
   padding: 10px;
 }
+.modal_basket_options{
+  width: 95%;
+  background-color: #fff;
+  position: fixed;
+  bottom: 20px;
+}
 .modal_basket_total {
   border-top: 1px solid var(--white);
   border-bottom: 1px solid var(--white);

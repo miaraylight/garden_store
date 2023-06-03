@@ -10,7 +10,7 @@ export default function ContactPage() {
   useEffect(() => {
     window.scrollTo(0,0) 
   }, [])
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const onSubmitHandler = async (data) => {
     try {
       const response = await fetch("http://localhost:3333/feedback/send", {
@@ -128,12 +128,12 @@ export default function ContactPage() {
             <input
               type="text"
               placeholder="Name"
-              {...register("name", { required: true })}
+              {...register("name", { required: true, minLength: 2 })}
             />
             <input
               type="text"
               placeholder="Last Name"
-              {...register("lastName", { required: true })}
+              {...register("lastName", { required: true, minLength: 2  })}
             />
           </div>
           <input
@@ -144,16 +144,19 @@ export default function ContactPage() {
               pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
             })}
           />
+          <p className={s.error_message}>{errors.email ? 'Please check the correctness of email' : ''}</p>
           <input
             type="text"
             placeholder="Subject"
             {...register("subject", { required: true, maxLength: 100 })}
           />
+          <p className={s.error_message}>{errors.subject ? 'Please tell us more' : ''}</p>
           <textarea
             type="text"
             placeholder="Your message"
-            {...register("message", { required: true })}
+            {...register("message", { required: true, minLength: 4 })}
           />
+          <p className={s.error_message}>{errors.message ? 'Please tell us more' : ''}</p>
           <MainButton children={"submit"} />
         </form>
       </div>

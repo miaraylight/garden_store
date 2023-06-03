@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import MainButton from "../MainButton";
 
 export default function GetDiscountForm() {
-  const { register, handleSubmit, reset, setError, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
   const onSubmitHandler = async (data) => {
     try {
@@ -33,7 +33,7 @@ export default function GetDiscountForm() {
       <div className={s.content_wrapper}>
         <div className={s.form_wrapper}>
           <h3>5% off on the first order</h3>
-          <p>
+          <p className={s.form_descr}>
             Receive an irresistible discount by entering your phone number into
             our form!
           </p>
@@ -48,6 +48,7 @@ export default function GetDiscountForm() {
                 pattern: /\(?\+\(?49\)?[ ()]?([- ()]?\d[- ()]?){10}/g,
               })}
             />
+            <p className={s.error_message}>{errors.number ? 'Please check the correctness of number' : ''}</p>
             <MainButton children={"get a discount"} />
           </form>
         </div>
