@@ -14,14 +14,13 @@
 
 .basketItem_image {
     max-width: 120px;
-
     height: 100%;
     aspect-ratio: 1;
 }
 
 .basketItem_image img {
     width: 100%;
-    min-width: 70px;
+    min-width: 60px;
     height: 100%;
 }
 
@@ -120,4 +119,9 @@
         aspect-ratio: 1;
     }
 
+}
+@media (max-width: 400px) {
+    .basketItem_wrapper td{
+        padding: 8px 5px;
+    }
 }

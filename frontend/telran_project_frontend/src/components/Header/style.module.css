@@ -131,6 +131,7 @@
 
 .modal_basket_total :last-child {
   color: var(--lightGrey);
+  padding-right: 20px;
 }
 
 .menu_icon {

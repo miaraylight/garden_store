@@ -67,8 +67,8 @@
     z-index: 5;
     position: fixed;
     top: 0;
-    right: 0;
-    transform: translateX(100%);
+    left: 0;
+    transform: translateX(-100%);
 }
 
 .modal_content_active_right {
@@ -82,7 +82,7 @@
     flex-direction: column;
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     transform: translateX(0);
 }
 
@@ -127,7 +127,8 @@
 @media (max-width: 769px) {
 
     .modal_content,
-    .modal_content_active {
+    .modal_content_active,
+    .modal_content_active_right {
         width: 80vw;
     }
 
@@ -141,7 +142,8 @@
 @media (max-width: 400px) {
 
     .modal_content,
-    .modal_content_active {
+    .modal_content_active,
+    .modal_content_active_right {
         width: 100vw;
     }
 }
