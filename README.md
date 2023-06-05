@@ -30,6 +30,7 @@ and ***/frontend/telran_project_frontend***
 - React Toastify is used for toast notifications
 
 
+![preview](./frontend/telran_project_frontend/public/images/Untitled%20video.gif)
 
 
 
