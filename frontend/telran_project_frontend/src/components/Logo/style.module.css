@@ -1,0 +1,42 @@
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 1px;
+    height: fit-content;
+}
+.logo p{
+    font-family: DM serif Display;
+    color: var(--khaki);
+    text-transform: none;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.5;
+    
+}
+.logo span{
+    font-family: inherit;
+    color: var(--lightGrey);
+    font-size: 13px;
+    text-transform: uppercase;
+}
+@media (max-width: 769px) {
+    .logo p{
+        font-size: 1.5rem;
+        
+    }
+    .logo span{
+        font-size: 11px;
+    }
+}
+@media (max-width: 400px) {
+    .logo p{
+        font-size: 1.3rem;
+        
+    }
+    .logo span{
+        font-size: 9px;
+    }
+}
